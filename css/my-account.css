@@ -1,6 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 
-
-
-h1 {
+.header {
   text-align: center;
+}
+article a {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }

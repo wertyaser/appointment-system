@@ -14,11 +14,11 @@
     <article data-aos="flip-left">
         <h1>Login</h1>
         <form action="login.php" method="post">
-            <input type="text" name="uname" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <a href="./pages/sign-up.php">Create an account</a>
+        <a href="./sign-up.php">Create an account</a>
     </article>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
