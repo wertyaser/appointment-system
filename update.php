@@ -31,11 +31,12 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <form method="post">
-            <input type="text" id="name" name="name" placeholder="Name" required disabled>
+            <input type="text" id="name" name="name" placeholder="Name" value="something" required disabled>
             <input type="date" id="birthday" name="birthday">
-            <input type="text" id="course" name="course" placeholder="Course" required>
+            <input type="text" id="course" name="course" placeholder="Course" value="something" required disabled>
             <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Password" value="something" required disabled>
+            <button type="submit">Edit</button>
             <button type="submit">Update</button>
         </form>
     </div>

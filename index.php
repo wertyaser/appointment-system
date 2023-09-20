@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     $pass = md5($pass);
 
-    $sql = "SELECT * FROM admin WHERE email='$email' AND password='$pass'";
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$pass'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -20,6 +20,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['password'] = $row['password'];
         }
     }
+
+
     header("Location: ./pages/my-account.php");
 }
 ?>
@@ -41,15 +43,20 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <article data-aos="flip-left">
         <h1>Login</h1>
         <form method="post">
-            <input type="email" name="email" placeholder="Email" required>
+            <input id="searchInput" type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <button onClick="handleClick(this)" type="submit">Login</button>
         </form>
         <a href="./sign-up.php">Create an account</a>
     </article>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        function handleClick(element) {
+            const inputStr = document.getElementById("searchInput")
+            localStorage.setItem("lobotAuth", JSON.stringify(inputStr.value))
+        }
     </script>
 </body>
 

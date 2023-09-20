@@ -1,6 +1,6 @@
 article {
-  margin: auto;
-  margin-top: 10%;
+  margin-inline: auto;
+  margin-block: 100px;
   width: 500px;
   text-align: center;
 }

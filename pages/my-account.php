@@ -18,7 +18,10 @@ include "../db_connect.php";
 <body>
     <nav>
         <ul>
-            <li>Logo</li>
+            <li>
+                <img src="../logo.png" alt="logo" width="100" height="100" style="margin-right: 10px;">
+                LOBOT
+            </li>
         </ul>
         <ul>
             <a href="../logout.php" role="button">Log out</a>
@@ -31,7 +34,13 @@ include "../db_connect.php";
         </div>
         <div class="container">
             <?php
-            $sql = "Select * from `users`";
+            $authEmail = $_GET['email'];
+            // console.log(authEmail);
+
+            // echo "Email: " . ;
+
+
+            $sql = 'SELECT * FROM `users` WHERE email = \'' . $authEmail . '\'';
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -54,9 +63,14 @@ include "../db_connect.php";
                 }
             }
             ?>
-
         </div>
     </main>
-</body>
 
+    <script>
+        const email = JSON.parse(localStorage.getItem("lobotAuth"))
+
+        location.href = "http://localhost/lobo/pages/my-account.php?email=" + email
+
+    </script>
+</body>
 </html>
