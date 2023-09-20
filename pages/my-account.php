@@ -48,7 +48,7 @@ include "../db_connect.php";
                     <h2 style="margin: 0;">Email: ' . $email . '</h2>
                     <h2 style="margin: 0;">Password: ' . $password . '</h2>
                     <br><br>
-                    <a href="../update.php?update_id=' . $id . '" role="button" style="width: 100%;">Update</a>
+                    <a href="../update.php?update_id=' . $id . '" role="button" >Update</a>
                     </article>
                     ';
                 }
