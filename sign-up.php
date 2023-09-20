@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $bday = $_POST['bday'];
-    $course = "";
+    $course =  $_POST['course'];
 
     $query = "insert into users (name, birthday, course, email, password) 
         values ('$fullname', '$bday', '$course', '$email', '$password')";
@@ -40,13 +40,14 @@ if (isset($_POST['submit'])) {
             <input type="text" name="fname" placeholder="First name" required autocapitalize="on">
             <input type="text" name="lname" placeholder="Last name" required autocapitalize="on">
             <input type="text" name="email" placeholder="Email" required>
+            <input type="text" name="course" placeholder="Course" required autocapitalize="on">
             <input type="password" name="password" placeholder="Password" required>
             <label for="date">Birthday
                 <input type="date" id="date" name="bday">
             </label>
             <button type="submit" name="submit" value="submit">Create Account</button>
         </form>
-        <!--<a href="./pages/login.php">Cancel</a>-->
+        <a href="./index.php">Back to Login</a>
     </article>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
