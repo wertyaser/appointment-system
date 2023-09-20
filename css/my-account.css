@@ -6,8 +6,13 @@
 .header {
   text-align: center;
 }
-article a {
+/* article a {
   display: flex;
   justify-content: center;
   align-items: baseline;
+} */
+
+nav {
+  padding-inline: 50px;
 }
+
