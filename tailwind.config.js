@@ -9,7 +9,11 @@ module.exports = {
         "pink-violet": "#974EC3",
         "pink": "#FE7BE5",
       },
+    },
+    fontFamily: {
+      "display": ['Mochiy Pop One', "sans-serif"]
     }
+   
   },
   plugins: [],
 }
