@@ -1,6 +1,10 @@
 <?php
-include 'db_connect.php';
-if (isset($_POST['submit'])) {
+session_start();
+
+include("db_connect.php");
+include("functions.php");
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $firstname = $_POST['fname'];
     $lastname = $_POST['lname'];
     $fullname = $firstname . " " . $lastname;
@@ -9,16 +13,28 @@ if (isset($_POST['submit'])) {
     $bday = $_POST['bday'];
     $course =  $_POST['course'];
 
-    $query = "insert into users (name, birthday, course, email, password) 
-        values ('$fullname', '$bday', '$course', '$email', '$password')";
-    $result = mysqli_query($conn, $query);
-    if ($result) {
-        header("Location: index.php");
-        exit();
+    if (!empty($fullname) && !empty($password) && !empty($email) && !empty($bday) && !empty($course)) {
+        $query = "select * from users where email = '$email' limit 1";
+        $result = mysqli_query($conn, $query);
+        if ($result->num_rows > 0) {
+            echo "Email already exists. Please use a different email.";
+        } else {
+            $query = "insert into users (name, birthday, course, email, password) 
+                          values ('$fullname', '$bday', '$course', '$email', '$password')";
+            $result = mysqli_query($conn, $query);
+
+            if ($result) {
+                header("Location: index.php");
+                die;
+            } else {
+                echo "Error inserting data into the database.";
+            }
+        }
     } else {
-        echo "Data failed successfully!";
+        echo "Please enter some valid information!";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +63,7 @@ if (isset($_POST['submit'])) {
             </label>
             <button type="submit" name="submit" value="submit">Create Account</button>
         </form>
-        <a href="./index.php">Back to Login</a>
+        <p>Already have an account?<a href="./index.php"> Login</a></p>
     </article>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

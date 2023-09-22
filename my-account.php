@@ -1,7 +1,9 @@
 <?php
 session_start();
-include "../db_connect.php";
 
+include("db_connect.php");
+include("functions.php");
+$user_data = check_login($conn);
 ?>
 
 <!DOCTYPE html>
@@ -11,37 +13,30 @@ include "../db_connect.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/my-account.css">
-    <link rel="stylesheet" href="../pico-master/css/pico.min.css" />
+    <link rel="stylesheet" href="pico-master/css/pico.min.css" />
     <title>My Account</title>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li>
-                <img src="../logo.png" alt="logo" width="100" height="100" style="margin-right: 10px;">
-                LOBOT
-            </li>
+            <li>Logo</li>
         </ul>
         <ul>
-            <a href="../logout.php" role="button">Log out</a>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="logout.php" role="button">Log out</a></li>
         </ul>
     </nav>
     <main>
         <div class="header">
-            <h1>MY ACCOUNT</h1>
+            <h1>Hello, <?php echo $user_data['name']; ?></h1>
             <h4>Student details</h4>
         </div>
         <div class="container">
             <?php
-            $authEmail = $_GET['email'];
-            // console.log(authEmail);
-
-            // echo "Email: " . ;
-
-
-            $sql = 'SELECT * FROM `users` WHERE email = \'' . $authEmail . '\'';
-            $result = mysqli_query($conn, $sql);
+            $id = $user_data['student_id'];
+            $query = "SELECT * from users where student_id = '$id' limit 1";
+            $result = mysqli_query($conn, $query);
             if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $id = $row['student_id'];
@@ -57,7 +52,7 @@ include "../db_connect.php";
                     <h2 style="margin: 0;">Email: ' . $email . '</h2>
                     <h2 style="margin: 0;">Password: ' . $password . '</h2>
                     <br><br>
-                    <a href="../update.php?update_id=' . $id . '" role="button" >Update</a>
+                    <a href=" update.php?update_id=' . $id . '" role="button" >Update</a>
                     </article>
                     ';
                 }
@@ -65,12 +60,6 @@ include "../db_connect.php";
             ?>
         </div>
     </main>
-
-    <script>
-        const email = JSON.parse(localStorage.getItem("lobotAuth"))
-
-        location.href = "http://localhost/lobo/pages/my-account.php?email=" + email
-
-    </script>
 </body>
+
 </html>

@@ -1,31 +1,32 @@
 <?php
+
 session_start();
 
-include "db_connect.php";
+include("db_connect.php");
+include("functions.php");
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['email'];
-    $pass = $_POST['password'];
+    $password = $_POST['password'];
 
-    $pass = md5($pass);
+    if (!empty($email) && !empty($password)) {
+        $query = "select * from users where email = '$email' limit 1";
+        $result = mysqli_query($conn, $query);
 
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$pass'";
-
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) === 1) {
-        $row = mysqli_fetch_assoc($result);
-        if ($row['email'] === $email && $row['password'] === $pass) {
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['password'] = $row['password'];
+        if ($result) {
+            $result = mysqli_query($conn, $query);
+            if ($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                if ($user_data['password'] === $password) {
+                    $_SESSION['user_id'] = $email;
+                    header("Location: my-account.php");
+                }
+            }
         }
+        echo "Wrong Username or Password!";
     }
-
-
-    header("Location: ./pages/my-account.php");
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,20 +44,15 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <article data-aos="flip-left">
         <h1>Login</h1>
         <form method="post">
-            <input id="searchInput" type="email" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button onClick="handleClick(this)" type="submit">Login</button>
+            <button type="submit">Login</button>
         </form>
-        <a href="./sign-up.php">Create an account</a>
+        <p>Don't have an account?<a href="./sign-up.php"> Signup</a></p>
     </article>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-
-        function handleClick(element) {
-            const inputStr = document.getElementById("searchInput")
-            localStorage.setItem("lobotAuth", JSON.stringify(inputStr.value))
-        }
     </script>
 </body>
 
