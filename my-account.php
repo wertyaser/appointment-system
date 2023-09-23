@@ -17,7 +17,7 @@ $user_data = check_login($conn);
     <title>My Account</title>
 </head>
 
-<body>
+<body class="bg-blue">
     <nav>
         <ul>
             <li>Logo</li>

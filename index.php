@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Login</title>
 </head>
 
-<body class="bg-violet min-h-screen flex">
+<body class="bg-blue min-h-screen flex">
     <article data-aos="flip-left" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
 
         <div class="flex p-8 w-full">

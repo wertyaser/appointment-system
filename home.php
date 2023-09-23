@@ -18,7 +18,7 @@ include("db_connect.php");
   <title>Home page</title>
 </head>
 
-<body class="bg-violet min-h-screen flex items-center justify-start">
+<body class="bg-blue min-h-screen flex items-center justify-start">
   <section class="w-11/12 relative mx-auto">
     <nav class="text-pink border border-pink max-w-xl rounded-full p-4 w-11/12 fixed top-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
       <span class="mr-auto">logo</span>
