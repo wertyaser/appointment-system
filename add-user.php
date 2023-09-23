@@ -20,9 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "Email already exists. Please use a different email.";
         } else {
             $query = "insert into users (name, birthday, course, email, password) 
-                          values ('$fullname', '$bday', '$course', '$email', '$password')";
-            $result = mysqli_query($conn, $query);
-
+            values ('$fullname', '$bday', '$course', '$email', '$password');";
+            $query .= "SET @num := 0;
+             UPDATE users
+             SET student_id = @num := @num + 1
+             ORDER BY student_id;";
+            $result = mysqli_multi_query($conn, $query);
             if ($result) {
                 header("Location: admin.php");
                 die;

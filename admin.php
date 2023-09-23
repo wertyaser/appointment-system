@@ -84,9 +84,9 @@ include 'db_connect.php';
         </div>
     </main>
 
-    <!-- 
+
     <div class="">
-        <svg class="w-screen absolute inset-x-0 bottom-0 mt-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+        <svg class="w-screen absolute inset-x-0 bottom-0 mt-10 -z-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
             <style>
                 .path-0 {
                     animation: pathAnim-0 4s;
@@ -160,7 +160,7 @@ include 'db_connect.php';
             </defs>
             <path d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
         </svg>
-    </div> -->
+    </div>
 
     <script src="./js/functions.js"></script>
 </body>

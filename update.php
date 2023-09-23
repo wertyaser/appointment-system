@@ -56,11 +56,7 @@ if (isset($_POST['submit'])) {
 
         </form>
     </div>
-    <script>
-        function myAlert() {
-            alert("Updated Successfully");
-        }
-    </script>
+    <script src="./js/functions.js"></script>
 </body>
 
 </html>
