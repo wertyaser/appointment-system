@@ -50,33 +50,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Sign Up</title>
 </head>
 
-<body class="bg-violet min-h-screen flex">
-    <article data-aos="flip-left" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
+<body class="bg-blue min-h-screen flex">
+    <article data-aos="flip-right" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
 
         <div class="flex p-4 w-full">
             <form method="post" class="m-auto">
                 <h1 class="mb-6 text-white text-2xl text-center">Sign Up</h1>
-                <!-- / -->
 
-                <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="email" placeholder="Email" required class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="email" placeholder="Email" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
                 <!-- <label for="date">Birthday -->
-                <input type="date" id="date" name="bday" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full w-full">
+                <input type="date" id="date" name="bday" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
                 <!-- </label> -->
                 <!--  -->
 
 
                 <div class="flex items-center gap-2 mb-2 flex-wrap">
-                    <button class="border border-white rounded-lg text-white py-2 text-sm w-full">Back to
-                        login</button>
-                    <button type="submit" class="bg-pink text-white rounded-lg py-2 text-sm w-full">Create
+                    <button type="submit" name="submit" class="bg-pink text-white rounded-lg py-2 text-sm w-full">Create
                         Account</button>
 
                 </div>
-                <p class="text-white">Already have an account?<a href="./index.php"> Login</a></p>
+                <p class="text-white underline underline-offset-8">Already have an account?<a href="./index.php"> Login</a></p>
             </form>
         </div>
         <div class="h-full w-[300px] shrink-0 relative hidden md:block">

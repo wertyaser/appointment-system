@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $adminResult = mysqli_query($conn, $sqlAdmin);
 
         if ($adminResult) {
-            $result = mysqli_query($conn, $sqlAdmin);
+            $adminResult = mysqli_query($conn, $sqlAdmin);
             if ($adminResult && mysqli_num_rows($adminResult) > 0) {
                 $user_data = mysqli_fetch_assoc($adminResult);
                 if ($user_data['password'] === $passwordAdmin) {
@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
             }
         }
+        echo "Gagu hindi ka admin!";
     }
 }
 
@@ -70,12 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <div class="flex p-8 w-full">
             <form method="post" class="m-auto">
                 <h1 class="mb-6 text-white text-2xl text-center">Sign In</h1>
-                <input type="email" name="email" placeholder="Email" required class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white">
-                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white">
+                <input type="email" name="email" placeholder="Email" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
+                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
 
                 <button type="submit" class="bg-pink text-white rounded-lg px-4 py-2 text-sm w-full mb-2">Sign
                     In</button>
-                <p class="text-white">Don't have an account?<a href="./sign-up.php"> Signup</a></p>
+                <p class="text-white underline underline-offset-8">Don't have an account?<a href="./sign-up.php"> Signup</a></p>
             </form>
         </div>
         <div class="h-full w-[300px] shrink-0 hidden md:block">

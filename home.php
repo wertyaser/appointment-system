@@ -15,7 +15,7 @@ include("db_connect.php");
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-  <title>Home page</title>
+  <title>Home</title>
 </head>
 
 <body class="bg-blue min-h-screen flex items-center justify-start">

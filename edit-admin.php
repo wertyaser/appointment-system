@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="pico-master/css/pico.min.css"> -->
+    <link rel="stylesheet" href="pico-master/css/pico.min.css">
     <!-- <link rel="stylesheet" href="./css/update.css"> -->
     <link rel="stylesheet" href="./css/output.css">
     <title>Update</title>
@@ -57,11 +57,7 @@ if (isset($_POST['submit'])) {
 
         </form>
     </div>
-    <script>
-        function myAlert() {
-            alert("Updated Successfully");
-        }
-    </script>
+    <script src="./js/functions.js"></script>
 </body>
 
 </html>
