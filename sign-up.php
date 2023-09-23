@@ -51,27 +51,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body class="bg-violet min-h-screen flex">
-    <article data-aos="flip-left"
-        class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
+    <article data-aos="flip-left" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
 
         <div class="flex p-4 w-full">
             <form method="post" class="m-auto">
                 <h1 class="mb-6 text-white text-2xl text-center">Sign Up</h1>
                 <!-- / -->
 
-                <input type="text" name="fname" placeholder="First name" required autocapitalize="on"
-                    class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on"
-                    class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="email" placeholder="Email" required
-                    class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="course" placeholder="Course" required autocapitalize="on"
-                    class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="password" name="password" placeholder="Password" required
-                    class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="email" placeholder="Email" required class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
+                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full">
                 <!-- <label for="date">Birthday -->
-                <input type="date" id="date" name="bday"
-                    class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full w-full">
+                <input type="date" id="date" name="bday" class="mb-2 block bg-violet border border-white px-4 py-2 rounded-lg text-white w-full w-full">
                 <!-- </label> -->
                 <!--  -->
 
@@ -87,8 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </form>
         </div>
         <div class="h-full w-[300px] shrink-0 relative hidden md:block">
-            <img src="./images/auth-image.png" alt="a person attempting to smile but failed."
-                class="h-full w-full object-cover">
+            <img src="./images/auth-image.png" alt="a person attempting to smile but failed." class="h-full w-full object-cover">
         </div>
 
 

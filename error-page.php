@@ -15,9 +15,7 @@
             <h1>ERROR | 404</h1>
             <a href="index.php" role="button">Back to Login</a>
         </article>
-
     </main>
-
 </body>
 
 </html>
