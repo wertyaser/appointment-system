@@ -1,11 +1,22 @@
 function myAlert() {
-  alert("Updated Successfully");
+  alert("Updated Successfully")
 }
 
 function createUserAlert() {
-  alert("Successfully created a new user");
+  alert("Successfully created a new user")
 }
 
 function deleteUserAlert() {
-  alert("Successfully deleted!");
+  alert("Successfully deleted!")
+}
+
+function handleBackButton() {
+  window.history.back()
+}
+
+function handleClearFields() {
+  console.log("run")
+  const inputs = document.querySelectorAll("input")
+  console.log(inputs)
+  inputs.forEach((input) => (input.value = ""))
 }
