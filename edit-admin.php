@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header('Location: my-account.php');
+        header('Location: admin.php');
     } else {
         die(mysqli_error($conn));
     }
@@ -37,7 +37,8 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pico-master/css/pico.min.css">
-    <link rel="stylesheet" href="./css/update.css">
+    <!-- <link rel="stylesheet" href="./css/update.css"> -->
+    <link rel="stylesheet" href="./css/output.css">
     <title>Update</title>
 </head>
 

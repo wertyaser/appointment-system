@@ -4,16 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "blue": "#313866",
-        "violet": "#504099",
+        blue: "#313866",
+        violet: "#504099",
         "pink-violet": "#974EC3",
-        "pink": "#FE7BE5",
+        pink: "#FE7BE5",
       },
     },
     fontFamily: {
-      "display": ['Mochiy Pop One', "sans-serif"]
-    }
-   
+      display: ["Poetsen One", "sans-serif"],
+    },
   },
   plugins: [],
-}
+};

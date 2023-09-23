@@ -12,12 +12,12 @@ $user_data = check_login($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/my-account.css">
-    <link rel="stylesheet" href="pico-master/css/pico.min.css" />
+    <link rel="stylesheet" href="./css/output.css">
+    <!-- <link rel="stylesheet" href="pico-master/css/pico.min.css" /> -->
     <title>My Account</title>
 </head>
 
-<body>
+<body class="bg-blue">
     <nav>
         <ul>
             <li>Logo</li>
