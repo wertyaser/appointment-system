@@ -19,8 +19,8 @@ include 'db_connect.php';
         <div class="flex justify-between pt-24 mb-10">
             <h1 class="text-pink font-display text-5xl">Admin</h1>
             <div class="flex gap-3">
-                <button class="p-3 bg-pink text-white rounded-full border border-white font-md shadow-md px-6"><a href="add-user.php">ADD USER</a></button>
-                <button class="p-3 bg-pink text-white rounded-full border border-white font-md shadow-md px-6"><a href="logout.php">LOG OUT</a></button>
+                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="add-user.php">ADD USER</a></button>
+                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">LOG OUT</a></button>
             </div>
         </div>
 
