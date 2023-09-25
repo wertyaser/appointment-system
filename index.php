@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
             }
         }
-        echo "Gagu hindi ka admin!";
+        echo "You are not an admin.";
     }
 }
 

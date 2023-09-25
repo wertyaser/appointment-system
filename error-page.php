@@ -28,7 +28,7 @@
             <div class="glitch-wrapper">
                 <div class="glitch" data-glitch="ERROR | 404">ERROR | 404</div>
             </div>
-            <p class="text-2xl text-center my-6">Walang meron d2...</p>
+            <p class="text-2xl text-center my-6">There is nothing here...</p>
             <a href="index.php" role="button"
                 class="text-center bg-violet text-white rounded-lg px-4 py-2 mx-auto block">Back to
                 Login</a>
