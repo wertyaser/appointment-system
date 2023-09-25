@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
             }
         }
-        echo "Wrong Username or Password!";
+        echo '<script type="text/javascript">alert("Wrong Email or Password") </script>';
     }
 }
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
             }
         }
-        echo "You are not an admin.";
+        // echo "You are not an admin.";
     }
 }
 
@@ -62,20 +62,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <!-- <link rel="stylesheet" href="./pico-master/css/pico.css" /> -->
     <link rel="stylesheet" href="./css/output.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <title>Login</title>
 </head>
 
 <body class="bg-blue min-h-screen flex">
-    <article data-aos="flip-left"
-        class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
+    <article data-aos="flip-left" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
 
         <div class="flex p-8 w-full">
             <form method="post" class="m-auto">
                 <h1 class="mb-6 text-white text-2xl text-center">Sign In</h1>
-                <input type="email" name="email" placeholder="Email" required
-                    class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
-                <input type="password" name="password" placeholder="Password" required
-                    class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
+                <input type="email" name="email" placeholder="Email" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
+                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
 
                 <button type="submit" class="bg-pink text-white rounded-lg px-4 py-2 text-sm w-full mb-2">Sign
                     In</button>
@@ -83,9 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         Signup</a></p>
             </form>
         </div>
-        <div class="h-max w-[300px] shrink-0 hidden md:block">
-            <img src="./images/auth-bg.jpeg" alt="a person attempting to smile but failed."
-                class="h-full w-full object-cover">
+        <div class="w-[300px] shrink-0 hidden md:block">
+            <img src="./images/auth-bg.jpeg" alt="a person attempting to smile but failed." class="h-full w-full object-cover">
         </div>
 
 

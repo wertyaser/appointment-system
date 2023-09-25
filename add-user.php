@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         } else {
             $query = "insert into users (name, birthday, course, email, password) 
             values ('$fullname', '$bday', '$course', '$email', '$password');";
-            $query .= "SET @num := 0;
-             UPDATE users
-             SET student_id = @num := @num + 1
-             ORDER BY student_id;";
-            $result = mysqli_multi_query($conn, $query);
+            // $query .= "SET @num := 0;
+            //  UPDATE users
+            //  SET student_id = @num := @num + 1
+            //  ORDER BY student_id;";
+            $result = mysqli_query($conn, $query);
             if ($result) {
                 header("Location: admin.php");
                 die;
@@ -48,15 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link rel="stylesheet" href="./css/output.css">
     <title>Add User</title>
     <script src="./js/functions.js" defer></script>
+
 </head>
 
 <body class="bg-blue min-h-screen flex relative pb-16">
     <div class="p-4 w-11/12 mx-auto max-w-7xl">
-        <button onClick="handleBackButton()" type="button"
-            class="flex items-center gap-2 border border-white mb-16 rounded-md hover:bg-white/[.5] transition-all px-6 py-3">
-            <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-undo-2">
+        <button onClick="handleBackButton()" type="button" class="flex items-center gap-2 border border-white mb-16 rounded-md hover:bg-white/[.5] transition-all px-6 py-3">
+            <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-undo-2">
                 <path d="M9 14 4 9l5-5" />
                 <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11" />
             </svg> <span class="text-white">Back</span></button>
@@ -64,35 +62,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <form method="post" class="max-w-2xl w-full mx-auto">
 
             <div class="flex items-center gap-2">
-                <input type="text" name="fname" placeholder="First name" required autocapitalize="on"
-                    class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
-                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on"
-                    class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
+                <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
+                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
             </div>
-            <input type="text" name="email" placeholder="Email" required
-                class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
-            <input type="text" name="course" placeholder="Course" required autocapitalize="on"
-                class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
-            <input type="password" name="password" placeholder="Password" required
-                class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
+            <input type="text" name="email" placeholder="Email" required class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
+            <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
+            <input type="password" name="password" placeholder="Password" required class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
 
 
             <label for="date" class="mb-3 text-white block">Birthday</label>
-            <input type="date" id="date" name="bday"
-                class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
+            <input type="date" id="date" name="bday" class="mb-3 block bg-blue border border-white px-6 py-4 rounded-lg text-white w-full min-w-0">
 
             <div class="flex items-center gap-2 mb-3">
-                <button type="button" onClick="handleClearFields()"
-                    class="px-6 py-4 rounded-md border border-white hover:bg-white/[.5] transition-all text-white">Clear</button>
-                <button onclick="createUserAlert();" type="submit"
-                    class="bg-pink text-white rounded-lg py-4 text-sm min-w-0 w-full hover:bg-pink-violet transition-all">Create
+                <button type="button" onClick="handleClearFields()" class="px-6 py-4 rounded-md border border-white hover:bg-white/[.5] transition-all text-white">Clear</button>
+                <button onclick="createUserAlert();" type="submit" class="bg-pink text-white rounded-lg py-4 text-sm min-w-0 w-full hover:bg-pink-violet transition-all">Create
                     user</button>
             </div>
         </form>
     </div>
     <div class="">
-        <svg class="w-screen absolute inset-x-0 bottom-0 -z-10" width="100%" id="svg" viewBox="0 0 1440 390"
-            xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+        <svg class="w-screen absolute inset-x-0 bottom-0 -z-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
             <style>
                 .path-0 {
                     animation: pathAnim-0 4s;
@@ -128,10 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <stop offset="95%" stop-color="#504099"></stop>
                 </linearGradient>
             </defs>
-            <path
-                d="M 0,400 C 0,400 0,133 0,133 C 68.09094256259206,144.25202503681885 136.18188512518412,155.5040500736377 189,168 C 241.81811487481588,180.4959499263623 279.36340206185565,194.23582474226805 333,182 C 386.63659793814435,169.76417525773195 456.3645066273932,131.55265095729013 530,122 C 603.6354933726068,112.44734904270987 681.1785714285716,131.55357142857142 746,141 C 810.8214285714284,150.44642857142858 862.921207658321,150.23306332842418 914,156 C 965.078792341679,161.76693667157582 1015.1365979381442,173.51417525773192 1080,171 C 1144.8634020618558,168.48582474226808 1224.5324005891016,151.71023564064802 1287,143 C 1349.4675994108984,134.28976435935198 1394.7337997054492,133.644882179676 1440,133 C 1440,133 1440,400 1440,400 Z"
-                stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
-                class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            <path d="M 0,400 C 0,400 0,133 0,133 C 68.09094256259206,144.25202503681885 136.18188512518412,155.5040500736377 189,168 C 241.81811487481588,180.4959499263623 279.36340206185565,194.23582474226805 333,182 C 386.63659793814435,169.76417525773195 456.3645066273932,131.55265095729013 530,122 C 603.6354933726068,112.44734904270987 681.1785714285716,131.55357142857142 746,141 C 810.8214285714284,150.44642857142858 862.921207658321,150.23306332842418 914,156 C 965.078792341679,161.76693667157582 1015.1365979381442,173.51417525773192 1080,171 C 1144.8634020618558,168.48582474226808 1224.5324005891016,151.71023564064802 1287,143 C 1349.4675994108984,134.28976435935198 1394.7337997054492,133.644882179676 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
             <style>
                 .path-1 {
                     animation: pathAnim-1 4s;
@@ -167,10 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <stop offset="95%" stop-color="#504099"></stop>
                 </linearGradient>
             </defs>
-            <path
-                d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z"
-                stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
-                class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+            <path d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
         </svg>
     </div>
 

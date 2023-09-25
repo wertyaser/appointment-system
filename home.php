@@ -20,24 +20,26 @@ include("db_connect.php");
 
 <body class="bg-blue min-h-screen flex items-center justify-start">
   <section class="w-11/12 relative mx-auto">
-    <nav
-      class="text-pink border border-pink max-w-xl rounded-full p-4 w-11/12 fixed top-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
-      <img src="./images/logo.png" alt="lobot logo" class="w-[30px] block mr-auto">
-      <button class=""><a href="my-account.php">My account</a></button>
-      <a href="logout.php"><svg class="text-pink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg></a>
+    <nav class="text-pink border border-pink max-w-xl rounded-full p-4 w-11/12 fixed top-4 left-1/2 -translate-x-1/2 flex items-center gap-3">
+      <a href="home.php" class="block mr-auto"><img src="./images/lobot.png" alt="lobot logo" class="w-[30px]  "></a>
+      <button class=""><a href="my-account.php">My Account</a></button>
+      <a href="logout.php"><svg class="text-pink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" x2="9" y1="12" y2="12" />
+        </svg></a>
     </nav>
 
 
-    <div class="my-auto mb-16">
+    <div class="my-auto mb-14" data-aos="fade-right">
       <h1 class="font-display text-pink text-[148px]">E-RTU</h1>
-      <h2 class="text-pink text-xl">Student Information Management System</h2>
+      <p class="text-pink text-4xl font-extralight">Student Information Management System</p>
     </div>
   </section>
 
 
   <div class="">
-    <svg class="w-screen absolute inset-x-0 bottom-0 -z-10" width="100%" id="svg" viewBox="0 0 1440 390"
-      xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+    <svg class="w-screen absolute inset-x-0 bottom-0 -z-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
       <style>
         .path-0 {
           animation: pathAnim-0 4s;
@@ -73,10 +75,7 @@ include("db_connect.php");
           <stop offset="95%" stop-color="#504099"></stop>
         </linearGradient>
       </defs>
-      <path
-        d="M 0,400 C 0,400 0,133 0,133 C 68.09094256259206,144.25202503681885 136.18188512518412,155.5040500736377 189,168 C 241.81811487481588,180.4959499263623 279.36340206185565,194.23582474226805 333,182 C 386.63659793814435,169.76417525773195 456.3645066273932,131.55265095729013 530,122 C 603.6354933726068,112.44734904270987 681.1785714285716,131.55357142857142 746,141 C 810.8214285714284,150.44642857142858 862.921207658321,150.23306332842418 914,156 C 965.078792341679,161.76693667157582 1015.1365979381442,173.51417525773192 1080,171 C 1144.8634020618558,168.48582474226808 1224.5324005891016,151.71023564064802 1287,143 C 1349.4675994108984,134.28976435935198 1394.7337997054492,133.644882179676 1440,133 C 1440,133 1440,400 1440,400 Z"
-        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
-        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+      <path d="M 0,400 C 0,400 0,133 0,133 C 68.09094256259206,144.25202503681885 136.18188512518412,155.5040500736377 189,168 C 241.81811487481588,180.4959499263623 279.36340206185565,194.23582474226805 333,182 C 386.63659793814435,169.76417525773195 456.3645066273932,131.55265095729013 530,122 C 603.6354933726068,112.44734904270987 681.1785714285716,131.55357142857142 746,141 C 810.8214285714284,150.44642857142858 862.921207658321,150.23306332842418 914,156 C 965.078792341679,161.76693667157582 1015.1365979381442,173.51417525773192 1080,171 C 1144.8634020618558,168.48582474226808 1224.5324005891016,151.71023564064802 1287,143 C 1349.4675994108984,134.28976435935198 1394.7337997054492,133.644882179676 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
       <style>
         .path-1 {
           animation: pathAnim-1 4s;
@@ -112,10 +111,7 @@ include("db_connect.php");
           <stop offset="95%" stop-color="#504099"></stop>
         </linearGradient>
       </defs>
-      <path
-        d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z"
-        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
-        class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+      <path d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
     </svg>
   </div>
 

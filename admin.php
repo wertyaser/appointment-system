@@ -1,7 +1,8 @@
 <?php
 session_start();
 include 'db_connect.php';
-
+include 'functions.php';
+check_login($conn);
 ?>
 
 <!DOCTYPE html>
@@ -12,19 +13,20 @@ include 'db_connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/output.css">
     <title>Admin</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-blue min-h-screen">
     <main class="mx-auto w-11/12 max-w-7xl">
         <div class="flex justify-between pt-24 mb-10">
-            <h1 class="text-pink font-display text-5xl">Admin</h1>
+            <h1 class="text-pink font-display text-5xl" data-aos="fade-right">Admin</h1>
             <div class="flex gap-3">
                 <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="add-user.php">ADD USER</a></button>
                 <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">LOG OUT</a></button>
             </div>
         </div>
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg ">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg " data-aos="flip-up">
             <table class="w-full text-xl text-left ">
                 <thead class="text-xl text-white uppercase bg-pink ">
                     <tr>
@@ -161,7 +163,10 @@ include 'db_connect.php';
             <path d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
         </svg>
     </div>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="./js/functions.js"></script>
 </body>
 
