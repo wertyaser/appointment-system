@@ -83,8 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         Signup</a></p>
             </form>
         </div>
-        <div class="h-full w-[300px] shrink-0 hidden md:block">
-            <img src="./images/auth-image.png" alt="a person attempting to smile but failed."
+        <div class="h-max w-[300px] shrink-0 hidden md:block">
+            <img src="./images/auth-bg.jpeg" alt="a person attempting to smile but failed."
                 class="h-full w-full object-cover">
         </div>
 

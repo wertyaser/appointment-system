@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body class="bg-blue min-h-screen flex">
-    <article data-aos="flip-right" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
+    <article data-aos="flip-right" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden items-stretch flex">
 
         <div class="flex p-4 w-full">
             <form method="post" class="m-auto">
@@ -81,8 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <p class="text-white underline underline-offset-8">Already have an account?<a href="./index.php"> Login</a></p>
             </form>
         </div>
-        <div class="h-full w-[300px] shrink-0 relative hidden md:block">
-            <img src="./images/auth-image.png" alt="a person attempting to smile but failed." class="h-full w-full object-cover">
+        <div class="h-max w-[300px] shrink-0 relative hidden md:block">
+            <img src="./images/auth-bg.jpeg" alt="a person attempting to smile but failed." class="h-full w-full object-cover">
         </div>
 
 
