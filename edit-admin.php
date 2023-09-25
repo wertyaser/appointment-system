@@ -45,9 +45,11 @@ if (isset($_POST['submit'])) {
 
 <body class="min-h-screen bg-blue py-16 relative">
     <main class="container mx-auto ma-w-7xl w-11/12">
-    <button onClick="handleBackButton()" type="button" class="flex items-center gap-2 border border-white mb-16 rounded-md hover:bg-white/[.5] transition-all px-6 py-3"> <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" class="lucide lucide-undo-2">
+        <button onClick="handleBackButton()" type="button"
+            class="flex items-center gap-2 border border-white mb-16 rounded-md hover:bg-white/[.5] transition-all px-6 py-3">
+            <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-undo-2">
                 <path d="M9 14 4 9l5-5" />
                 <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11" />
             </svg> <span class="text-white">Back</span></button>
@@ -76,9 +78,7 @@ if (isset($_POST['submit'])) {
                 class="border border-white rounded-md text-white mb-3 min-w-0 bg-blue px-6 py-4 block w-full"
                 placeholder="Password">
             <div class="flex items-center gap-2">
-                <button
-                    type="button"
-                    onClick="handleClearFields()"
+                <button type="button" onClick="handleClearFields()"
                     class="px-6 py-4 rounded-md border border-white hover:bg-white/[.5] transition-all text-white">Clear</button>
                 <button type="submit" name="submit" onclick="myAlert();"
                     class="bg-pink text-white rounded-md px-6 py-4 border border-white w-full hover:bg-pink-violet transition-all">Update</button>
@@ -169,7 +169,7 @@ if (isset($_POST['submit'])) {
                 class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
         </svg>
     </div>
-    
+
 </body>
 
 </html>
