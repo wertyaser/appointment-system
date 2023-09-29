@@ -29,9 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $emailAdmin = $_POST['email'];
     $passwordAdmin = $_POST['password'];
-
-    // $sqlAdmin = "SELECT * from admin";
-    // $adminResult = mysqli_query($conn, $sqlAdmin);
     if (!empty($emailAdmin) && !empty($passwordAdmin)) {
         $sqlAdmin = "SELECT * from admin WHERE username='$emailAdmin' AND password='$passwordAdmin' ";
         $adminResult = mysqli_query($conn, $sqlAdmin);

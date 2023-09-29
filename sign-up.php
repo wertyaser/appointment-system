@@ -92,16 +92,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </body>
 
 </html>
-<!-- <h1>Sign Up</h1>
-        <form method="post">
-            <input type="text" name="fname" placeholder="First name" required autocapitalize="on">
-            <input type="text" name="lname" placeholder="Last name" required autocapitalize="on">
-            <input type="text" name="email" placeholder="Email" required>
-            <input type="text" name="course" placeholder="Course" required autocapitalize="on">
-            <input type="password" name="password" placeholder="Password" required>
-            <label for="date">Birthday
-                <input type="date" id="date" name="bday">
-            </label>
-            <button type="submit" name="submit" value="submit">Create Account</button>
-        </form>
-        <p>Already have an account?<a href="./index.php"> Login</a></p> -->
