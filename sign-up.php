@@ -48,9 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./pico-master/css/pico.css" /> -->
     <link rel="stylesheet" href="./css/output.css" />
-    <!-- <link rel="stylesheet" href="./css/login.css" /> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Sign Up</title>
@@ -68,7 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <input type="text" name="email" placeholder="Email" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
                 <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
                 <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-                <!-- <label for="date">Birthday -->
                 <input type="date" id="date" name="bday" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
 
                 <div class="flex items-center gap-2 mb-2 flex-wrap">
