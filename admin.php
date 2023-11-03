@@ -3,6 +3,7 @@ session_start();
 include 'db_connect.php';
 include 'functions.php';
 check_login($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +19,10 @@ check_login($conn);
 
 <body class="bg-blue min-h-screen">
     <main class="mx-auto w-11/12 max-w-7xl">
+        <form method="post" class="flex p-10 gap-3">
+            <input type="text" placeholder="Search" name="search" class="block w-full p-4 pl-10 text-sm text-white border border-gray-300 rounded-lg bg-blue focus:ring-blue-500 focus:border-blue-500  ">
+            <button name="submit" class="text-white text-md p-5 bg-pink rounded-md border">Search</button>
+        </form>
         <div class="flex justify-between pt-24 mb-10">
             <h1 class="text-pink font-display text-5xl" data-aos="fade-right">Admin</h1>
             <div class="flex gap-3">
@@ -53,35 +58,75 @@ check_login($conn);
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php
-                    $query = "SELECT * from users";
-                    $result = mysqli_query($conn, $query);
-                    if ($result) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $id = $row['student_id'];
-                            $name = $row['name'];
-                            $birthday = $row['birthday'];
-                            $course = $row['course'];
-                            $email = $row['email'];
-                            $password = $row['password'];
-                            echo '<tr class="border-b font-light whitespace-nowrap text-white">
-                            <td class="px-6 py-4">' . $id . '</td>
-                            <td class="px-6 py-4">' . $name . '</td>
-                            <td class="px-6 py-4">' . $birthday . '</td>
-                            <td class="px-6 py-4">' . $course . '</td>
-                            <td class="px-6 py-4">' . $email . '</td>
-                            <td class="px-6 py-4">' . $password . '</td>
-                          <td>
-                          <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
-                          <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
-                      </td></tr>
-                     ';
-                        }
-                    }
-                    ?>
 
-                </tbody>
+                <?php
+                // if (isset($_POST['submit'])) {
+                //     $search = $_POST['search'];
+                //     $sql = "SELECT * from `users`  where student_id='$search' or name like '%$search%' or email like '%$search%' or course like '%$search%'";
+                //     // $query = "SELECT * from users";
+                //     $result = mysqli_query($conn, $sql);
+                //     if ($result) {
+                //         if (mysqli_num_rows($result) > 0) {
+
+                //             while ($row = mysqli_fetch_assoc($result)) {
+                //                 $id = $row['student_id'];
+                //                 $name = $row['name'];
+                //                 $birthday = $row['birthday'];
+                //                 $course = $row['course'];
+                //                 $email = $row['email'];
+                //                 $password = $row['password'];
+                //                 echo ' <tbody><tr class="border-b font-light whitespace-nowrap text-white">
+                //         <td class="px-6 py-4">' . $id . '</td>
+                //         <td class="px-6 py-4">' . $name . '</td>
+                //         <td class="px-6 py-4">' . $birthday . '</td>
+                //         <td class="px-6 py-4">' . $course . '</td>
+                //         <td class="px-6 py-4">' . $email . '</td>
+                //         <td class="px-6 py-4">' . $password . '</td>
+                //       <td>
+                //       <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
+                //       <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
+                //   </td></tr></tbody>';
+                //             };
+                //         } else {
+                //             echo '<script>alert("WALA NGANI, KULIT MO AH!");</script>';
+                //         }
+                //     }
+                // }
+                $sql = "SELECT * FROM `users`";
+                $result = mysqli_query($conn, $sql);
+
+                // Check if the form is submitted and a search query is provided
+                if (isset($_POST['submit'])) {
+                    $search = $_POST['search'];
+                    // Filter users based on search query
+                    $sql = "SELECT * FROM `users` WHERE student_id='$search' OR name LIKE '%$search%' OR email LIKE '%$search%' OR course LIKE '%$search%'";
+                    $result = mysqli_query($conn, $sql);
+                }
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['student_id'];
+                        $name = $row['name'];
+                        $birthday = $row['birthday'];
+                        $course = $row['course'];
+                        $email = $row['email'];
+                        $password = $row['password'];
+                        echo '<tbody><tr class="border-b font-light whitespace-nowrap text-white">
+                    <td class="px-6 py-4">' . $id . '</td>
+                    <td class="px-6 py-4">' . $name . '</td>
+                    <td class="px-6 py-4">' . $birthday . '</td>
+                    <td class="px-6 py-4">' . $course . '</td>
+                    <td class="px-6 py-4">' . $email . '</td>
+                    <td class="px-6 py-4">' . $password . '</td>
+                    <td>
+                    <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
+                    <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
+                </td></tr></tbody>';
+                    }
+                }
+                ?>
+
+
             </table>
         </div>
     </main>
