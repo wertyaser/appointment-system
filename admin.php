@@ -60,7 +60,7 @@ check_login($conn);
                 </thead>
 
                 <?php
-          
+
                 $sql = "SELECT * FROM `users`";
                 $result = mysqli_query($conn, $sql);
 
