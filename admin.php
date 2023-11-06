@@ -60,38 +60,7 @@ check_login($conn);
                 </thead>
 
                 <?php
-                // if (isset($_POST['submit'])) {
-                //     $search = $_POST['search'];
-                //     $sql = "SELECT * from `users`  where student_id='$search' or name like '%$search%' or email like '%$search%' or course like '%$search%'";
-                //     // $query = "SELECT * from users";
-                //     $result = mysqli_query($conn, $sql);
-                //     if ($result) {
-                //         if (mysqli_num_rows($result) > 0) {
-
-                //             while ($row = mysqli_fetch_assoc($result)) {
-                //                 $id = $row['student_id'];
-                //                 $name = $row['name'];
-                //                 $birthday = $row['birthday'];
-                //                 $course = $row['course'];
-                //                 $email = $row['email'];
-                //                 $password = $row['password'];
-                //                 echo ' <tbody><tr class="border-b font-light whitespace-nowrap text-white">
-                //         <td class="px-6 py-4">' . $id . '</td>
-                //         <td class="px-6 py-4">' . $name . '</td>
-                //         <td class="px-6 py-4">' . $birthday . '</td>
-                //         <td class="px-6 py-4">' . $course . '</td>
-                //         <td class="px-6 py-4">' . $email . '</td>
-                //         <td class="px-6 py-4">' . $password . '</td>
-                //       <td>
-                //       <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
-                //       <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
-                //   </td></tr></tbody>';
-                //             };
-                //         } else {
-                //             echo '<script>alert("WALA NGANI, KULIT MO AH!");</script>';
-                //         }
-                //     }
-                // }
+          
                 $sql = "SELECT * FROM `users`";
                 $result = mysqli_query($conn, $sql);
 
