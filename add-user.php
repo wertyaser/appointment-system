@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </div>
         </form>
     </div>
-    <div class="">
+    <div class="fixed inset-x-0 bottom-0 -z-10">
         <svg class="w-screen absolute inset-x-0 bottom-0 -z-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
             <style>
                 .path-0 {
