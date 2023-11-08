@@ -18,9 +18,9 @@ check_login($conn);
 </head>
 
 <body class="bg-blue min-h-screen">
-    <main class="mx-auto w-11/12 max-w-7xl">
+    <main class="mx-auto w-11/12 max-w-7xl h-full pb-16">
         <form method="post" class="flex p-10 gap-3">
-            <input type="text" placeholder="Search" name="search" class="block w-full p-4 pl-10 text-sm text-white border border-gray-300 rounded-lg bg-blue focus:ring-blue-500 focus:border-blue-500  ">
+            <input type="text" placeholder="Search" name="search" class="block w-full p-4 pl-10 text-sm bg-transparent text-white rounded-lg border-2 border-pink focus:border-pink-violet outline-none transition-all">
             <button name="submit" class="text-white text-md p-5 bg-pink rounded-md border">Search</button>
         </form>
         <div class="flex justify-between pt-24 mb-10">
@@ -101,7 +101,7 @@ check_login($conn);
     </main>
 
 
-    <div class="">
+    <div class="fixed inset-x-0 bottom-0 -z-10">
         <svg class="w-screen absolute inset-x-0 bottom-0 mt-10 -z-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
             <style>
                 .path-0 {
