@@ -33,10 +33,35 @@ include("db_connect.php");
     </nav>
 
 
-    <div class="my-auto mb-14" data-aos="fade-right">
-      <h1 class="font-display text-pink text-[148px]">E-RTU</h1>
-      <p class="text-pink text-4xl font-extralight">Student Information Management System</p>
-    </div>
+
+    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16">My Appointments</h1>
+    <section class="grid grid-cols-4 gap-2 max-w-5xl mx-auto text-white">
+
+      <!-- Headers -->
+      <h3 class="font-bold">Purpose</h3>
+      <h3 class="font-bold">Branch</h3>
+      <h3 class="font-bold">Office</h3>
+      <h3 class="font-bold">Date</h3>
+
+
+      <!-- Main Cell -->
+      <p>ID</p>
+      <p>RTU</p>
+      <p>MIC</p>
+      <p>Nov 24, 2023</p>
+
+        <!-- Main Cell -->
+      <p>ID</p>
+      <p>RTU</p>
+      <p>MIC</p>
+      <p>Nov 24, 2023</p>
+
+
+    </section>
+
+    <a href="make-appointment.php" class=" mt-12 md:mt-16 block w-fit mx-auto text-center px-6 py-2 text-white bg-violet rounded-lg hover:bg-violet/[.75]">Book an Appointment</a>
+
+   
   </section>
 
 
