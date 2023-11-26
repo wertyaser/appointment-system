@@ -1,6 +1,29 @@
 <?php
 session_start();
 include("db_connect.php");
+include("functions.php");
+$user_data = check_login($conn);
+$user_id = $user_data["student_id"];
+
+if (isset($_POST['submit'])) {
+  $branch = $_POST['branch'];
+  $office = $_POST['office'];
+  $purpose = $_POST['purpose'];
+  $date = $_POST['date'];
+
+  if (!empty($branch) && !empty($office) && !empty($purpose) && !empty($date)) {
+    $query = "insert into appointments (ownerId, branch, office, purpose, date) 
+    values ('$user_id', '$branch', '$office', '$purpose', '$date');";
+    $result = mysqli_query($conn, $query);
+  
+    if ($result) {
+        echo '<script type="text/javascript">alert("Appointment Submitted!") </script>';
+    } else {
+        die(mysqli_error($conn));
+    }
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -35,22 +58,23 @@ include("db_connect.php");
         </svg></a>
     </nav>
 
-    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16 mt-24 md:mt-32">Book an appointment</h1>
-    <section class="flex gap-2 max-w-5xl mx-auto text-white flex-col">
-      <select name="branch" id="branch" class="bg-transparent px-6 py-3 border border-pink rounded-lg">
+    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16 mt-24 md:mt-32">Book an appointment
+    </h1>
+    <form method="post" class="flex gap-2 max-w-5xl mx-auto text-white flex-col">
+      <select name="branch" id="branch" class="bg-transparent px-6 py-3 border border-pink rounded-lg" required>
         <option value="boni" class="text-black" disabled selected>Select branch</option>
         <option value="boni" class="text-black">Boni Campus</option>
         <option value="pasig" class="text-black">Pasig Campus</option>
       </select>
-      <input type="text" class="px-6 py-3 border border-pink rounded-lg bg-transparent" placeholder="Office">
+      <input name="office" type="text" class="px-6 py-3 border border-pink rounded-lg bg-transparent" placeholder="Office" required>
       <textarea name="purpose" id="purpose" cols="10" rows="10"
         class="resize-none px-6 py-3 border border-pink rounded-lg bg-transparent"
-        placeholder="State your purpose"></textarea>
-      <input type="datetime-local" class="px-6 py-3 border border-pink rounded-lg bg-transparent" placeholder="Date">
-    </section>
+        placeholder="State your purpose" required></textarea>
+      <input name="date" type="datetime-local" class="px-6 py-3 border border-pink rounded-lg bg-transparent" placeholder="Date" required>
+      <button name="submit" type="submit"
+        class=" mt-12 md:mt-16 block w-fit mx-auto text-center px-6 py-2 text-white bg-violet rounded-lg hover:bg-violet/[.75]">Submit</button>
+    </form>
 
-    <a href="view-appointment.php"
-      class=" mt-12 md:mt-16 block w-fit mx-auto text-center px-6 py-2 text-white bg-violet rounded-lg hover:bg-violet/[.75]">Submit</a>
 
 
   </section>
