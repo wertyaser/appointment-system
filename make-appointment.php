@@ -46,7 +46,7 @@ include("db_connect.php");
       <textarea name="purpose" id="purpose" cols="10" rows="10"
         class="resize-none px-6 py-3 border border-pink rounded-lg bg-transparent"
         placeholder="State your purpose"></textarea>
-      <input type="date" class="px-6 py-3 border border-pink rounded-lg bg-transparent" placeholder="Date">
+      <input type="datetime-local" class="px-6 py-3 border border-pink rounded-lg bg-transparent" placeholder="Date">
     </section>
 
     <a href="view-appointment.php"
