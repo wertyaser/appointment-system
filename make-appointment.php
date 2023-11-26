@@ -35,7 +35,7 @@ include("db_connect.php");
         </svg></a>
     </nav>
 
-    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16">Book an appointments</h1>
+    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16 mt-24 md:mt-32">Book an appointment</h1>
     <section class="flex gap-2 max-w-5xl mx-auto text-white flex-col">
       <select name="branch" id="branch" class="bg-transparent px-6 py-3 border border-pink rounded-lg">
         <option value="boni" class="text-black" disabled selected>Select branch</option>

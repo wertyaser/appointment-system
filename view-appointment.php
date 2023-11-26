@@ -34,7 +34,7 @@ include("db_connect.php");
 
 
 
-    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16">My Appointments</h1>
+    <h1 class="text-center font-bold text-2xl md:text-3xl text-pink mb-8 md:mb-16 mt-24 md:mt-32">My Appointments</h1>
     <section class="grid grid-cols-4 gap-2 max-w-5xl mx-auto text-white">
 
       <!-- Headers -->
