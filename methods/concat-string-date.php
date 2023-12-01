@@ -24,7 +24,7 @@ check_login($conn);
             <button name="submit" class="text-white text-md p-5 bg-pink rounded-md border">Search</button>
         </form>
         <div class="flex justify-between pt-24 mb-10">
-            <h1 class="text-pink font-display text-5xl" data-aos="fade-right">Admin</h1>
+            <h1 class="text-pink font-display text-5xl" data-aos="fade-right">View in summary format</h1>
             <div class="flex gap-3">
                 <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="add-user.php">ADD USER</a></button>
                 <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">LOG OUT</a></button>
@@ -101,7 +101,7 @@ check_login($conn);
             
 
         <div class="mx-auto max-w-3xl flex flex-col gap-2 mt-12">
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/between.php">Get Students Registered Between Last and First of this month</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="between.php">Get Students Registered Between Last and First of this month</a></button>
             <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/in.php">Get students only enrolled as BSIT</a></button>
             <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/max.php">Get the latest registered student</a></button>
             <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/min.php">Get the oldest registered student</a></button>
