@@ -98,6 +98,17 @@ check_login($conn);
 
             </table>
         </div>
+            
+
+        <div class="mx-auto max-w-3xl flex flex-col gap-2 mt-12">
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">Get Students Registered Between Last and First of this month</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">Get students only enrolled as BSIT</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">Get the latest registered student</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">Get the oldest registered student</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">Get the average grade</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">Get the sum grade</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">View in summary format</a></button>
+        </div>
     </main>
 
 
