@@ -102,13 +102,13 @@ check_login($conn);
 
         <div class="mx-auto max-w-3xl flex flex-col gap-2 mt-12">
             <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="between.php">Get Students Registered Between Last and First of this month</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/in.php">Get students only enrolled as BSIT</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/max.php">Get the latest registered student</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/min.php">Get the oldest registered student</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/average.php">Get the average grade</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/sum.php">Get the sum grade</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/concat-string-date.php">View in summary format</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/group-by.php">Count students only enrolled as BSIT</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="in.php">Get students only enrolled as BSIT</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="max.php">Get the latest registered student</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="min.php">Get the oldest registered student</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="average.php">Get the average grade</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="sum.php">Get the sum grade</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="concat-string-date.php">View in summary format</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="count-group-by.php">Count students only enrolled as BSIT</a></button>
         </div>
     </main>
 

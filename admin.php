@@ -20,14 +20,17 @@ check_login($conn);
 <body class="bg-blue min-h-screen">
     <main class="mx-auto w-11/12 max-w-7xl h-full pb-16">
         <form method="post" class="flex p-10 gap-3">
-            <input type="text" placeholder="Search" name="search" class="block w-full p-4 pl-10 text-sm bg-transparent text-white rounded-lg border-2 border-pink focus:border-pink-violet outline-none transition-all">
+            <input type="text" placeholder="Search" name="search"
+                class="block w-full p-4 pl-10 text-sm bg-transparent text-white rounded-lg border-2 border-pink focus:border-pink-violet outline-none transition-all">
             <button name="submit" class="text-white text-md p-5 bg-pink rounded-md border">Search</button>
         </form>
         <div class="flex justify-between pt-24 mb-10">
             <h1 class="text-pink font-display text-5xl" data-aos="fade-right">Admin</h1>
             <div class="flex gap-3">
-                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="add-user.php">ADD USER</a></button>
-                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="logout.php">LOG OUT</a></button>
+                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                        href="add-user.php">ADD USER</a></button>
+                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                        href="logout.php">LOG OUT</a></button>
             </div>
         </div>
 
@@ -98,23 +101,33 @@ check_login($conn);
 
             </table>
         </div>
-            
+
 
         <div class="mx-auto max-w-3xl flex flex-col gap-2 mt-12">
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/between.php">Get Students Registered Between Last and First of this month</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/in.php">Get students only enrolled as BSIT</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/max.php">Get the latest registered student</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/min.php">Get the oldest registered student</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/average.php">Get the average grade</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/sum.php">Get the sum grade</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/concat-string-date.php">View in summary format</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a href="./methods/group-by.php">Count students only enrolled as BSIT</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/between.php">Get Students Registered Between Last and First of this
+                    month</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/in.php">Get students only enrolled as BSIT</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/max.php">Get the latest registered student</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/min.php">Get the oldest registered student</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/average.php">Get the average grade</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/sum.php">Get the sum grade</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/concat-string-date.php">View in summary format</a></button>
+            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
+                    href="./methods/count-group-by.php">Count students only enrolled as BSIT</a></button>
         </div>
     </main>
 
 
     <div class="fixed inset-x-0 bottom-0 -z-10">
-        <svg class="w-screen absolute inset-x-0 bottom-0 mt-10 -z-10" width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+        <svg class="w-screen absolute inset-x-0 bottom-0 mt-10 -z-10" width="100%" id="svg" viewBox="0 0 1440 390"
+            xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
             <style>
                 .path-0 {
                     animation: pathAnim-0 4s;
@@ -150,7 +163,10 @@ check_login($conn);
                     <stop offset="95%" stop-color="#504099"></stop>
                 </linearGradient>
             </defs>
-            <path d="M 0,400 C 0,400 0,133 0,133 C 68.09094256259206,144.25202503681885 136.18188512518412,155.5040500736377 189,168 C 241.81811487481588,180.4959499263623 279.36340206185565,194.23582474226805 333,182 C 386.63659793814435,169.76417525773195 456.3645066273932,131.55265095729013 530,122 C 603.6354933726068,112.44734904270987 681.1785714285716,131.55357142857142 746,141 C 810.8214285714284,150.44642857142858 862.921207658321,150.23306332842418 914,156 C 965.078792341679,161.76693667157582 1015.1365979381442,173.51417525773192 1080,171 C 1144.8634020618558,168.48582474226808 1224.5324005891016,151.71023564064802 1287,143 C 1349.4675994108984,134.28976435935198 1394.7337997054492,133.644882179676 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            <path
+                d="M 0,400 C 0,400 0,133 0,133 C 68.09094256259206,144.25202503681885 136.18188512518412,155.5040500736377 189,168 C 241.81811487481588,180.4959499263623 279.36340206185565,194.23582474226805 333,182 C 386.63659793814435,169.76417525773195 456.3645066273932,131.55265095729013 530,122 C 603.6354933726068,112.44734904270987 681.1785714285716,131.55357142857142 746,141 C 810.8214285714284,150.44642857142858 862.921207658321,150.23306332842418 914,156 C 965.078792341679,161.76693667157582 1015.1365979381442,173.51417525773192 1080,171 C 1144.8634020618558,168.48582474226808 1224.5324005891016,151.71023564064802 1287,143 C 1349.4675994108984,134.28976435935198 1394.7337997054492,133.644882179676 1440,133 C 1440,133 1440,400 1440,400 Z"
+                stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
+                class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
             <style>
                 .path-1 {
                     animation: pathAnim-1 4s;
@@ -186,7 +202,10 @@ check_login($conn);
                     <stop offset="95%" stop-color="#504099"></stop>
                 </linearGradient>
             </defs>
-            <path d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+            <path
+                d="M 0,400 C 0,400 0,266 0,266 C 68.11800441826215,285.11395434462446 136.2360088365243,304.2279086892489 185,290 C 233.7639911634757,275.7720913107511 263.17396907216494,228.2023195876289 330,228 C 396.82603092783506,227.7976804123711 501.0681148748158,274.9628129602356 571,275 C 640.9318851251842,275.0371870397644 676.5535714285714,227.94642857142858 724,219 C 771.4464285714286,210.05357142857142 830.7175994108984,239.25147275405007 896,242 C 961.2824005891016,244.74852724594993 1032.576030927835,221.0476804123711 1096,223 C 1159.423969072165,224.9523195876289 1214.9782768777613,252.5578055964654 1271,264 C 1327.0217231222387,275.4421944035346 1383.5108615611193,270.7210972017673 1440,266 C 1440,266 1440,400 1440,400 Z"
+                stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
+                class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
         </svg>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
