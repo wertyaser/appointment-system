@@ -61,18 +61,11 @@ check_login($conn);
           </tr>
         </thead>
 
+
         <?php
 
-        $sql = "SELECT * FROM `users`";
+        $sql = "SELECT * FROM users WHERE course IN ('BSIT', 'BSCS')";
         $result = mysqli_query($conn, $sql);
-
-        // Check if the form is submitted and a search query is provided
-        if (isset($_POST['submit'])) {
-          $search = $_POST['search'];
-          // Filter users based on search query
-          $sql = "SELECT * FROM `users` WHERE student_id='$search' OR name LIKE '%$search%' OR email LIKE '%$search%' OR course LIKE '%$search%'";
-          $result = mysqli_query($conn, $sql);
-        }
 
         if ($result) {
           while ($row = mysqli_fetch_assoc($result)) {
@@ -90,10 +83,7 @@ check_login($conn);
                     <td class="px-6 py-4">' . $birthday . '</td>
                     <td class="px-6 py-4">' . $course . '</td>
                     <td class="px-6 py-4">' . $email . '</td>
-                    <td>
-                    <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
-                    <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
-                </td></tr></tbody>';
+                   </tr></tbody>';
           }
         }
         ?>
