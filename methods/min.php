@@ -39,61 +39,22 @@ check_login($conn);
         <thead class="text-xl text-white uppercase bg-pink ">
           <tr>
             <th scope="col" class="px-6 py-3">
-              Student ID
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Grade
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Name
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Birthday
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Course
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Email
-            </th>
-            <th scope="col" class="px-6 py-3">
+              Oldest
             </th>
           </tr>
         </thead>
 
         <?php
 
-        $sql = "SELECT * FROM `users`";
+        $sql = "SELECT MIN(created_at) as oldest FROM users";
         $result = mysqli_query($conn, $sql);
-
-        // Check if the form is submitted and a search query is provided
-        if (isset($_POST['submit'])) {
-          $search = $_POST['search'];
-          // Filter users based on search query
-          $sql = "SELECT * FROM `users` WHERE student_id='$search' OR name LIKE '%$search%' OR email LIKE '%$search%' OR course LIKE '%$search%'";
-          $result = mysqli_query($conn, $sql);
-        }
 
         if ($result) {
           while ($row = mysqli_fetch_assoc($result)) {
-            $id = $row['student_id'];
-            $name = $row['name'];
-            $birthday = $row['birthday'];
-            $course = $row['course'];
-            $email = $row['email'];
-            $password = $row['password'];
-            $grade = $row['grade'];
+            $oldest = $row['oldest'];
             echo '<tbody><tr class="border-b font-light whitespace-nowrap text-white">
-                    <td class="px-6 py-4">' . $id . '</td>
-                    <td class="px-6 py-4">' . $grade . '</td>
-                    <td class="px-6 py-4">' . $name . '</td>
-                    <td class="px-6 py-4">' . $birthday . '</td>
-                    <td class="px-6 py-4">' . $course . '</td>
-                    <td class="px-6 py-4">' . $email . '</td>
-                    <td>
-                    <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
-                    <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
-                </td></tr></tbody>';
+            <td class="px-6 py-4">' . $oldest . '</td>
+           </tr></tbody>';
           }
         }
         ?>
