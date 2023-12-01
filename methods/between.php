@@ -67,11 +67,9 @@ check_login($conn);
         $sql = "SELECT * FROM `users`";
         $result = mysqli_query($conn, $sql);
 
-        // Check if the form is submitted and a search query is provided
         if (isset($_POST['submit'])) {
           $search = $_POST['search'];
-          // Filter users based on search query
-          $sql = "SELECT * FROM `users` WHERE student_id='$search' OR name LIKE '%$search%' OR email LIKE '%$search%' OR course LIKE '%$search%'";
+          $sql = "SELECT * FROM users WHERE created_at BETWEEN DATE_FORMAT(NOW(), '%Y-%m-01') AND LAST_DAY(NOW());";
           $result = mysqli_query($conn, $sql);
         }
 
