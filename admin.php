@@ -39,6 +39,9 @@ check_login($conn);
                             Student ID
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Grade
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Name
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -51,10 +54,6 @@ check_login($conn);
                             Email
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Password
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-
                         </th>
                     </tr>
                 </thead>
@@ -80,13 +79,14 @@ check_login($conn);
                         $course = $row['course'];
                         $email = $row['email'];
                         $password = $row['password'];
+                        $grade = $row['grade'];
                         echo '<tbody><tr class="border-b font-light whitespace-nowrap text-white">
                     <td class="px-6 py-4">' . $id . '</td>
+                    <td class="px-6 py-4">' . $grade . '</td>
                     <td class="px-6 py-4">' . $name . '</td>
                     <td class="px-6 py-4">' . $birthday . '</td>
                     <td class="px-6 py-4">' . $course . '</td>
                     <td class="px-6 py-4">' . $email . '</td>
-                    <td class="px-6 py-4">' . $password . '</td>
                     <td>
                     <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
                     <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
