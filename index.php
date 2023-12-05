@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -59,31 +58,41 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <!-- <link rel="stylesheet" href="./pico-master/css/pico.css" /> -->
     <link rel="stylesheet" href="./css/output.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Login</title>
 </head>
 
-<body class="bg-blue min-h-screen flex">
-    <article data-aos="flip-left" class="m-auto max-w-2xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden flex">
+<body class="font-sans min-h-screen py-20 bg-cover overflow-hidden" style="background-image: url(images/auth-bg.jpg)">
+    <div class="flex items-center justify-center h-full">
+        <div class="bg-white bg-opacity-75 bg-blend-normal rounded-xl shadow-lg p-8 text-center transform scale-150 py-20 px-20" data-aos="fade-up" data-aos-duration="1000">
+            <div class="Logo mx-auto"> 
+                <img src="./images/Logo.png" class="mx-auto w-28">
+            </div>
+            <h1 class="font-bold text-3xl text-center mt-4">School Management System</h1>
+            <p class="font-light text-sm text-center mt-3">Empowering students through accessible appointments.</p>
 
-        <div class="flex p-8 w-full">
-            <form method="post" class="m-auto">
-                <h1 class="mb-6 text-white text-2xl text-center">Sign In</h1>
-                <input type="email" name="email" placeholder="Email" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
-                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white">
+            <form method="post" class="mx-auto mt-8 max-w-md">
+                <div class="relative mb-2">
+                    <img src="./images/user.png" alt="user" class="absolute inset-y-0 left-2 w-6 h-6 mt-2">
+                    <input type="email" name="email" placeholder="" required
+                        class="pl-10 pr-4 py-2 block w-full bg-gray-500 bg-opacity-50 border border-gray border-opacity-0 rounded-lg text-black mb-3">
+                <div class="relative mb-2">
+                    <img src="./images/lock.png" alt="lock" class="absolute inset-y-0 left-2 w-6 h-6 mt-2">
+                    <input type="password" name="password" placeholder="" required
+                        class="pl-10 pr-4 py-2 block w-full bg-gray-500 bg-opacity-50 border border-gray border-opacity-0 rounded-lg text-black mb-3">
 
-                <button type="submit" class="bg-pink text-white rounded-lg px-4 py-2 text-sm w-full mb-2">Sign
-                    In</button>
-                <p class="text-white underline underline-offset-8">Don't have an account?<a href="./sign-up.php">
-                        Signup</a></p>
+                <div class="flex justify-between">
+                    <button type="submit"
+                    style="background-color: #CBCDBC; color: black; font-family: 'Poppins', sans-serif;"
+                        class="bg-opacity-75 text-black rounded-lg px-4 py-2 text-sm w-60 mr-6 h-9 flex text-center justify-center pt-2">Sign In</button>
+                    <button type="submit"
+                    style="background-color: #C5D3CD; color: black; font-family: 'Poppins', sans-serif;"
+                        class="bg-opacity-75 text-black rounded-lg px-4 py-2 text-sm w-60 h-9 flex text-center justify-center pt-2"> <a href="./sign-up.php">Sign Up</a></></button>   
             </form>
         </div>
-        <div class="w-[300px] shrink-0 hidden md:block">
-            <img src="./images/auth-bg.jpeg" alt="a person attempting to smile but failed." class="h-full w-full object-cover">
-        </div>
+    </div>
 
-
-    </article>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
