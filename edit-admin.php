@@ -11,7 +11,7 @@ $birthday = $row['birthday'];
 $course = $row['course'];
 $email = $row['email'];
 $password = $row['password'];
-$grade = $row['grade'];
+$absent = $row['absent'];
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
@@ -19,9 +19,9 @@ if (isset($_POST['submit'])) {
     $course = $_POST['course'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $grade = $_POST['grade'];
+    $absent = $_POST['absent'];
 
-    $sql = "UPDATE users set student_id='$id', name='$name', birthday ='$birthday', course='$course', email='$email', password='$password', grade='$grade' WHERE student_id = '$id'";
+    $sql = "UPDATE users set student_id='$id', name='$name', birthday ='$birthday', course='$course', email='$email', password='$password', absent='$absent' WHERE student_id = '$id'";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -71,8 +71,8 @@ if (isset($_POST['submit'])) {
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/in.php">Get students only enrolled as BSIT</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/max.php">Get the latest registered student</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/min.php">Get the oldest registered student</a></li>
-                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/average.php">Get the average grade</a></li>
-                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/sum.php">Get the sum grade</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/average.php">Get the average absences of all students</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/sum.php">Get the sum of absences</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/concat-string-date.php">View in summary format</a></li>
                                 <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/count-group-by.php">Count students only enrolled as BSIT</a></li>
                             </ul>
@@ -109,8 +109,8 @@ if (isset($_POST['submit'])) {
                         <input type="text" id="course" name="course" value="<?php echo $course ?>" class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
                     </div>
                     <div class="w-full">
-                        <span >Grade</span>
-                        <input type="number" id="grade" name="grade" value="<?php echo $grade ?>" class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
+                        <span>Absent</span>
+                        <input type="number" id="grade" name="absent" value="<?php echo $absent ?>" class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
                     </div>
                 </div>
                 <span>Email</span>

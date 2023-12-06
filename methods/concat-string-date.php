@@ -10,18 +10,18 @@ check_login($conn);
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/output.css">
-  <title>View in summary format</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="../js/functions.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/output.css">
+    <title>View in summary format</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="../js/functions.js"></script>
 </head>
 
 <body>
-  <div class="min-h-screen bg-cover bg-center isolation relative" style="background-image: url('../images/auth-bg.jpg');">
-    <div class="FadedOverlay absolute inset-0 bg-bckgrd opacity-70 z-10"></div>
-    
+    <div class="min-h-screen bg-cover bg-center isolation relative" style="background-image: url('../images/auth-bg.jpg');">
+        <div class="FadedOverlay absolute inset-0 bg-bckgrd opacity-70 z-10"></div>
+
         <nav class="bg-bckgrd w-full top-0 start-0 border-b-4 border-accent z-20 relative">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a class="flex items-center space-x-3 rtl:space-x-reverse" href="../admin.php">
@@ -33,16 +33,18 @@ check_login($conn);
                         <div class="inline-block relative">
                             <button id="dropDownButton" class="hover:bg-gray-300 z-50 text-black text-lg py-1 px-4 rounded inline-flex items-center" onclick="toggleDropDown();">
                                 <span class="mr-1">Admin Utilities</span>
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
                             </button>
-                            
+
                             <ul id="dropDownItems" class="absolute hidden text-gray-700 pt-1 py-5 z-50">
                                 <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 z-50 py-2 px-4 block whitespace-no-wrap" href="between.php">Get Students Registered Between Last and First of this month</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="in.php">Get students only enrolled as BSIT</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="max.php">Get the latest registered student</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="min.php">Get the oldest registered student</a></li>
-                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="average.php">Get the average grade</a></li>
-                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="sum.php">Get the sum grade</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="average.php">Get the average absences of all students</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="sum.php">Get the sum of absences</a></li>
                                 <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="concat-string-date.php">View in summary format</a></li>
                                 <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="count-group-by.php">Count students only enrolled as BSIT</a></li>
                             </ul>
@@ -61,43 +63,43 @@ check_login($conn);
         </nav>
 
         <div class="mx-auto max-w-5xl w-11/12 py-8 z-10 relative mt-10">
-                <h1 class="font-bold text-6xl text-left mb-3">Admin Dashboard</h1>
-                <h1 class="font-normal text-3xl text-left mb-3">View in summary format</h1>
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white border-b-4 border-solid border-accent" data-aos="flip-up">
-                    <table class="w-full text-sm text-left ">
-                        <thead class="text-xl text-black uppercase bg-pink">
-                            <tr>
-                                <th scope="col" class="px-6 py-4 text-black text-sm ">
-                                    Summary
-                                </th>
-                            </tr>
-                        </thead>
-                        <?php
+            <h1 class="font-bold text-6xl text-left mb-3">Admin Dashboard</h1>
+            <h1 class="font-normal text-3xl text-left mb-3">View in summary format</h1>
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white border-b-4 border-solid border-accent" data-aos="flip-up">
+                <table class="w-full text-sm text-left ">
+                    <thead class="text-xl text-black uppercase bg-pink">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-black text-sm ">
+                                Summary
+                            </th>
+                        </tr>
+                    </thead>
+                    <?php
 
-                        $sql = "SELECT 
+                    $sql = "SELECT 
                         CONCAT(name, '\'s birthday is on ', UPPER(DATE_FORMAT(birthday, '%M %e, %Y'))) as Summary FROM users";
-                        $result = mysqli_query($conn, $sql);
+                    $result = mysqli_query($conn, $sql);
 
-                        // Check if the form is submitted and a search query is provided
-                        if (isset($_POST['submit'])) {
-                            $search = $_POST['search'];
-                            // Filter users based on search query
-                            $sql = "SELECT * FROM users WHERE created_at BETWEEN DATE_FORMAT(NOW(), '%Y-%m-01') AND LAST_DAY(NOW());";
-                            $result = mysqli_query($conn, $sql);
-                        }
-                    
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $summary = $row['Summary'];
-                                echo '<tbody><tr class="border-b font-light whitespace-nowrap text-black">
+                    // Check if the form is submitted and a search query is provided
+                    if (isset($_POST['submit'])) {
+                        $search = $_POST['search'];
+                        // Filter users based on search query
+                        $sql = "SELECT * FROM users WHERE created_at BETWEEN DATE_FORMAT(NOW(), '%Y-%m-01') AND LAST_DAY(NOW());";
+                        $result = mysqli_query($conn, $sql);
+                    }
+
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $summary = $row['Summary'];
+                            echo '<tbody><tr class="border-b font-light whitespace-nowrap text-black">
                                         <td class="px-6 py-4 text-sm text-black">' . $summary . '</td>
                                        </tr></tbody>';
-                            }
                         }
-                        ?>
-                    </table>
-                </div> 
-        </div> 
+                    }
+                    ?>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -105,5 +107,5 @@ check_login($conn);
         AOS.init();
     </script>
 </body>
-  
+
 </html>
