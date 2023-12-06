@@ -92,9 +92,6 @@ check_login($conn);
                                 <th scope="col" class="px-6 py-3 text-black text-sm ">
                                     Email
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-black text-sm text-left">
-                                    Actions
-                                </th>
                             </tr>
                         </thead>
 
@@ -127,10 +124,7 @@ check_login($conn);
                                         <td class="px-6 py-4 text-sm text-black">' . $birthday . '</td>
                                         <td class="px-6 py-4 text-sm text-black">' . $course . '</td>
                                         <td class="px-6 py-4 text-sm text-black">' . $email . '</td>
-                                        <td>
-                                        <button class="bg-secondary hover:bg-green-200/[.6] transition-all px-3 py-3 rounded-lg"><a href="../edit-admin.php?update_id=' . $id . '">Edit</a></button>
-                                        <button onclick="deleteUserAlert();" class="bg-red-300 hover:bg-red-500/[.6] transition-all p-3 rounded-lg"><a href="../delete.php?delete_id=' . $id . '">Delete</a></button>
-                                    </td></tr></tbody>';
+                                       </tr></tbody>';
                             }
                         }
                         ?>
