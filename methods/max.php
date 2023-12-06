@@ -49,12 +49,7 @@ check_login($conn);
                         </div>
                     </div>
 
-                    <form method="post" class="relative hidden md:block">
-                        <input type="text" name="search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-black rounded-full bg-bckgrd" placeholder="Search...">
-                        <button type="submit" name="submit" class="absolute inset-y-0 start-0 flex items-center ps-3 z-50">
-                            <img src="../images/search.png" alt="Logout" class="h-6 w-6 text-black" />
-                        </button>
-                    </form>
+                  
 
                     <a href="../add-user.php">
                         <img src="../images/add-user.png" alt="Logout" class="h-6 w-6 text-black" />

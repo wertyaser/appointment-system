@@ -1,8 +1,8 @@
 <?php
 $server = 'localhost';
 $username = 'root';
-$password = '';
-$dbname = 'lobot';
+$password = 'root';
+$dbname = 'student_db';
 
 $conn = new mysqli($server, $username, $password, $dbname);
 
