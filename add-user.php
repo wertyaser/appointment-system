@@ -49,13 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body>
-    <div class="backgroundImage min-h-screen bg-cover bg-center isolation relative" style="background-image: url('images/auth-bg.jpg');">
-            <div class="parentDiv container mx-auto bg-bckgrd rounded-xl shadow-lg p-8 grid grid-rows-12 grid-flow-col gap-4 justify-center">
-                <div class="logoDiv">
-                    <img src="./images/Logo.png" class="mx-auto w-28">
-                    <h1 class="font-bold text-3xl text-center text-black mt-4">School Management System</h1>
+    <div class="backgroundImage min-h-screen bg-cover bg-center isolation relative flex justify-center items-center" style="background-image: url('images/auth-bg.jpg');">
+            <div class="parentDiv mx-auto bg-bckgrd bg-opacity-75 rounded-xl shadow-lg p-4 grid grid-rows-9 grid-flow-col gap-4 w-9/12">
+                <div class="logoDiv row-start-2 col-span-1">
+                    <img src="./images/Logo.png" class="mx-auto w-[120px]">
+                    <h1 class="font-bold text-2xl text-center text-black mt-4">School Management System</h1>
+                    <p class="font-light text-xs text-center mt-3">Empowering students through accessible appointments.</p>
                 </div>
-                <div class="fieldDiv">
+                <div class="fieldDiv row-span-4">
                     <form method="post" class="m-auto">
                     <h1 class="mb-6 text-black text-2xl text-center">Sign Up</h1>
 
