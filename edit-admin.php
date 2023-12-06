@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
         </nav>
 
         <div class="mx-auto max-w-5xl w-11/12 py-8 z-10 relative mt-10">
-            <h1 class="font-bold text-7xl text-left mb-3">My Account</h1>
+            <h1 class="font-bold text-7xl text-left mb-3">Edit Information</h1>
             <form method="post" class="mx-auto max-w-5xl w-11/12 py-2 z-20 relative mt-10">
                 <div class="flex gap-2">
                     <div class="w-full">
