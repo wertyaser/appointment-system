@@ -1,8 +1,5 @@
 function updateAlert() {
   alert("Information updated successfully.");
-  // setTimeout(function () {
-  //   window.location.href = "my-account.php";
-  // }, 5000); // Adjust the delay time in milliseconds (1000ms = 1s)
 }
 
 function createUserAlert() {
@@ -26,4 +23,9 @@ function handleClearFields() {
 
 function registerAlert() {
   alert("Successfully registered!");
+}
+
+function toggleDropDown() {
+  var dropDownItems = document.getElementById("dropDownItems");
+  dropDownItems.classList.toggle("hidden");
 }

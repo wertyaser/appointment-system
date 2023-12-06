@@ -23,149 +23,120 @@ check_login($conn);
     
         <nav class="bg-bckgrd w-full top-0 start-0 border-b-4 border-accent z-20 relative">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a class="flex items-center space-x-3 rtl:space-x-reverse" href="home.php">
+                <a class="flex items-center space-x-3 rtl:space-x-reverse" href="admin.php">
                     <img src="./images/Logo.png" class="h-8">
                     <span class="self-center text-lg font-bold whitespace-nowrap text-black">Student Management System</span>
                 </a>
-                <div class="flex items-center space-x-4">
-                    <div class="flex md:order-2">
-                        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
-                        <span class="sr-only">Search</span>
-                        </button>
-                        <div class="relative hidden md:block">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                            </svg>
-                            <span class="sr-only">Search icon</span>
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="z-10">
+                        <div class="inline-block relative">
+                            <button id="dropDownButton" class="hover:bg-gray-300 z-50 text-black text-lg py-1 px-4 rounded inline-flex items-center" onclick="toggleDropDown();">
+                                <span class="mr-1">Admin Utilities</span>
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                            </button>
+                            
+                            <ul id="dropDownItems" class="absolute hidden text-gray-700 pt-1 py-5 z-50">
+                                <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 z-50 py-2 px-4 block whitespace-no-wrap" href="./methods/between.php">Get Students Registered Between Last and First of this month</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/in.php">Get students only enrolled as BSIT</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/max.php">Get the latest registered student</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/min.php">Get the oldest registered student</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/average.php">Get the average grade</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/sum.php">Get the sum grade</a></li>
+                                <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/concat-string-date.php">View in summary format</a></li>
+                                <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="./methods/count-group-by.php">Count students only enrolled as BSIT</a></li>
+                            </ul>
                         </div>
-                        <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
                     </div>
-                    
 
-                    <!-- <form method="post" class="flex gap-3">
-                        <input type="text" placeholder="Search" name="search"
-                        class="text-sm bg-transparent text-black rounded-lg border border-black focus:border-pink-black outline-none transition-all">
-                        <button name="submit" class="text-black text-md rounded-md border border-black">Search</button>
-                    </form> -->
+                    <form method="post" class="relative hidden md:block">
+                        <input type="text" name="search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-black rounded-full bg-bckgrd" placeholder="Search...">
+                        <button type="submit" name="submit" class="absolute inset-y-0 start-0 flex items-center ps-3 z-50">
+                            <img src="./images/search.png" alt="Logout" class="h-6 w-6 text-black" />
+                        </button>
+                    </form>
 
-                    <a href="my-account.php" class="self-center text-lg font-normal whitespace-nowrap text-black">My Account</a>
+                    <a href="add-user.php">
+                        <img src="./images/add-user.png" alt="Logout" class="h-6 w-6 text-black" />
+                    </a>
+
                     <a href="logout.php">
-                        <img src="./images/sign-out-alt.png" alt="Logout" class="h-6 w-6 text-pink" />
+                        <img src="./images/sign-out-alt.png" alt="Logout" class="h-6 w-6 text-black" />
                     </a>
                 </div>
             </div>
         </nav>
+
+        <div class="mx-auto max-w-5xl w-11/12 py-8 z-10 relative mt-10">
+                <h1 class="font-bold text-7xl text-left mb-3">Admin Dashboard</h1>
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white border-b-4 border-solid border-accent" data-aos="flip-up">
+                    <table class="w-full text-sm text-left ">
+                        <thead class="text-xl text-black uppercase bg-pink">
+                            <tr>
+                                <th scope="col" class="px-6 py-4 text-black text-sm ">
+                                    Student ID
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-black text-sm ">
+                                    Grade
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-black text-sm ">
+                                    Name
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-black text-sm ">
+                                    Birthday
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-black text-sm ">
+                                    Course
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-black text-sm ">
+                                    Email
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-black text-sm text-left">
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <?php
+
+                        $sql = "SELECT * FROM `users`";
+                        $result = mysqli_query($conn, $sql);
+
+                        // Check if the form is submitted and a search query is provided
+                        if (isset($_POST['submit'])) {
+                            $search = $_POST['search'];
+                            // Filter users based on search query
+                            $sql = "SELECT * FROM `users` WHERE student_id='$search' OR name LIKE '%$search%' OR email LIKE '%$search%' OR course LIKE '%$search%'";
+                            $result = mysqli_query($conn, $sql);
+                        }
+                    
+                        if ($result) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $id = $row['student_id'];
+                                $name = $row['name'];
+                                $birthday = $row['birthday'];
+                                $course = $row['course'];
+                                $email = $row['email'];
+                                $password = $row['password'];
+                                $grade = $row['grade'];
+                                echo '<tbody><tr class="border-b font-light whitespace-nowrap text-black">
+                                        <td class="px-6 py-4 text-sm text-black">' . $id . '</td>
+                                        <td class="px-6 py-4 text-sm text-black">' . $grade . '</td>
+                                        <td class="px-6 py-4 text-sm text-black">' . $name . '</td>
+                                        <td class="px-6 py-4 text-sm text-black">' . $birthday . '</td>
+                                        <td class="px-6 py-4 text-sm text-black">' . $course . '</td>
+                                        <td class="px-6 py-4 text-sm text-black">' . $email . '</td>
+                                        <td>
+                                        <button class="bg-secondary hover:bg-green-200/[.6] transition-all px-3 py-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
+                                        <button onclick="deleteUserAlert();" class="bg-red-300 hover:bg-red-500/[.6] transition-all p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
+                                    </td></tr></tbody>';
+                            }
+                        }
+                        ?>
+                    </table>
+                </div> 
+        </div> 
     </div>
 
-
-    <main class="mx-auto w-11/12 max-w-7xl h-full pb-16">
-        
-        <div class="flex justify-between pt-24 mb-10">
-            <h1 class="text-white font-display text-5xl" data-aos="fade-right">Admin</h1>
-            <div class="flex gap-3">
-                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                        href="add-user.php">ADD USER</a></button>
-                <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                        href="logout.php">LOG OUT</a></button>
-            </div>
-        </div>
-
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg " data-aos="flip-up">
-            <table class="w-full text-xl text-left ">
-                <thead class="text-xl text-white uppercase bg-pink ">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Student ID
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Grade
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Birthday
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Course
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Email
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                        </th>
-                    </tr>
-                </thead>
-
-                <?php
-
-                $sql = "SELECT * FROM `users`";
-                $result = mysqli_query($conn, $sql);
-
-                // Check if the form is submitted and a search query is provided
-                if (isset($_POST['submit'])) {
-                    $search = $_POST['search'];
-                    // Filter users based on search query
-                    $sql = "SELECT * FROM `users` WHERE student_id='$search' OR name LIKE '%$search%' OR email LIKE '%$search%' OR course LIKE '%$search%'";
-                    $result = mysqli_query($conn, $sql);
-                }
-
-                if ($result) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $id = $row['student_id'];
-                        $name = $row['name'];
-                        $birthday = $row['birthday'];
-                        $course = $row['course'];
-                        $email = $row['email'];
-                        $password = $row['password'];
-                        $grade = $row['grade'];
-                        echo '<tbody><tr class="border-b font-light whitespace-nowrap text-white">
-                    <td class="px-6 py-4">' . $id . '</td>
-                    <td class="px-6 py-4">' . $grade . '</td>
-                    <td class="px-6 py-4">' . $name . '</td>
-                    <td class="px-6 py-4">' . $birthday . '</td>
-                    <td class="px-6 py-4">' . $course . '</td>
-                    <td class="px-6 py-4">' . $email . '</td>
-                    <td>
-                    <button class="bg-pink p-3 rounded-lg"><a href="edit-admin.php?update_id=' . $id . '">Edit</a></button>
-                    <button onclick="deleteUserAlert();" class="bg-violet p-3 rounded-lg"><a href="delete.php?delete_id=' . $id . '">Delete</a></button>
-                </td></tr></tbody>';
-                    }
-                }
-                ?>
-
-
-            </table>
-        </div>
-
-
-        <div class="mx-auto max-w-3xl flex flex-col gap-2 mt-12">
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/between.php">Get Students Registered Between Last and First of this
-                    month</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/in.php">Get students only enrolled as BSIT</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/max.php">Get the latest registered student</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/min.php">Get the oldest registered student</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/average.php">Get the average grade</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/sum.php">Get the sum grade</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/concat-string-date.php">View in summary format</a></button>
-            <button class="p-3 bg-pink text-white rounded-md border border-white font-md shadow-md px-6"><a
-                    href="./methods/count-group-by.php">Count students only enrolled as BSIT</a></button>
-        </div>
-    </main>
-
-
-    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
