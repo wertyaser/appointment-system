@@ -54,38 +54,40 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Sign Up</title>
 </head>
 
-<body class="bg-blue min-h-screen flex">
-    <article data-aos="flip-right" class="m-auto max-w-xl w-11/12 border-2 border-pink rounded-2xl overflow-hidden items-stretch flex">
-
-        <div class="flex p-4 w-full">
-            <form method="post" class="m-auto">
-                <h1 class="mb-6 text-white text-2xl text-center">Sign Up</h1>
-
-                <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="email" placeholder="Email" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="password" name="password" placeholder="Password" required class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-                <input type="date" id="date" name="bday" class="mb-2 block bg-blue border border-white px-4 py-2 rounded-lg text-white w-full">
-
-                <div class="flex items-center gap-2 mb-2 flex-wrap">
-                    <button type="button" onClick="handleClearFields()" class="py-2 rounded-md border border-white hover:bg-white/[.5] transition-all text-white w-full">Clear</button>
-                    <button type="submit" name="submit" onClick="registerAlert()" class="bg-pink text-white rounded-lg py-2 text-sm w-full">Create
-                        Account</button>
-
+<body>
+    <div class="backgroundImage min-h-screen bg-cover bg-center isolation relative flex justify-center items-center" style="background-image: url('images/auth-bg.jpg');">
+            <div class="parentDiv mx-auto bg-bckgrd bg-opacity-75 rounded-xl shadow-lg p-12 grid grid-rows-9 grid-flow-col gap-4 w-9/12">
+                <div class="logoDiv row-start-2 col-span-1">
+                    <img src="./images/Logo.png" class="mx-auto w-[120px]">
+                    <h1 class="font-bold text-2xl text-center text-black mt-4">School Management System</h1>
+                    <p class="font-light text-xs text-center mt-3">Empowering students through accessible appointments.</p>
                 </div>
-                <p class="text-white underline underline-offset-8">Already have an account?<a href="./index.php"> Login</a></p>
-            </form>
-        </div>
-        <div class=" w-[300px] shrink-0 relative hidden md:block">
-            <img src="./images/auth-bg.jpeg" alt="a person attempting to smile but failed." class="h-full w-full object-cover">
-        </div>
-    </article>
-    <script src="./js/functions.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+                <div class="fieldDiv row-span-4">
+                    <form method="post" class="m-auto">
+                        <h1 class="mb-2 font-bold text-2xl text-left">Sign Up</h1>
+                        <p class="mb-4 text-black text-xs text-left">Create your account to access essential academic details and stay informed.</p>
+                        <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        <input type="text" name="email" placeholder="Email" required class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        <input type="password" name="password" placeholder="Password" required class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        <div class="w-full">
+                            <span class="text-xs">Birthday</span>
+                            <input type="date" id="birthday" name="birthday" value="<?php echo $birthday ?>" class="border border-neutral-300 rounded-md text-neutral-700 mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50"/>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="button" onClick="handleClearFields()" class="px-4 py-2 rounded-md border hover:bg-red-300/[.6] transition-all text-black bg-white bg-opacity-50 z-10">
+                                Clear
+                            </button>
+                            <button type="submit" name="submit" onClick="registerAlert()" class="text-black rounded-md px-4 py-2 border hover:bg-secondary/[.6] transition-all w-full  bg-white bg-opacity-50 z-10">
+                                Create Account
+                            </button>
+                        </div>
+                        <p class="text-black text-md text-center mt-4">Already have an account? <a class="text-black underline hover:underline-offset-4 z-10" href="./index.php">Login</a></p>
+                    </form>
+                </div>
+            </div>
+    </div>
 </body>
 
 </html>
