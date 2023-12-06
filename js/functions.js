@@ -1,5 +1,8 @@
 function updateAlert() {
-  alert("Updated Successfully");
+  alert("Information updated successfully.");
+  // setTimeout(function () {
+  //   window.location.href = "my-account.php";
+  // }, 5000); // Adjust the delay time in milliseconds (1000ms = 1s)
 }
 
 function createUserAlert() {

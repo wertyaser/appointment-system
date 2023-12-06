@@ -1,6 +1,8 @@
 <?php
 session_start();
 include("db_connect.php");
+include 'functions.php';
+check_login($conn);
 ?>
 
 <!DOCTYPE html>

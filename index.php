@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($result && mysqli_num_rows($result) > 0) {
                 $user_data = mysqli_fetch_assoc($result);
                 if ($user_data['password'] === $password) {
-                    $_SESSION['user_id'] = $email;
+                    $_SESSION['user_id'] = $user_data['student_id'];
                     header("Location: home.php");
                 }
             }
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $emailAdmin = $_POST['email'];
     $passwordAdmin = $_POST['password'];
     if (!empty($emailAdmin) && !empty($passwordAdmin)) {
-        $sqlAdmin = "SELECT * from admin WHERE username='$emailAdmin' AND password='$passwordAdmin' ";
+        $sqlAdmin = "SELECT * from admin WHERE username='$emailAdmin' AND password='$passwordAdmin' limit 1";
         $adminResult = mysqli_query($conn, $sqlAdmin);
 
         if ($adminResult) {
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if ($adminResult && mysqli_num_rows($adminResult) > 0) {
                 $user_data = mysqli_fetch_assoc($adminResult);
                 if ($user_data['password'] === $passwordAdmin) {
-                    $_SESSION['user_id'] = $email;
+                    $_SESSION['user_id'] = $user_data['id'];
                     header("Location: admin.php");
                 }
             }
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <button type="submit"
                     style="background-color: #CBCDBC; color: black; font-family: 'Poppins', sans-serif;"
                         class="bg-opacity-75 text-black rounded-lg px-4 py-2 text-sm w-60 mr-6 h-9 flex text-center justify-center pt-2">Sign In</button>
-                    <button type="submit"
+                    <button type="button"
                     style="background-color: #C5D3CD; color: black; font-family: 'Poppins', sans-serif;"
                         class="bg-opacity-75 text-black rounded-lg px-4 py-2 text-sm w-60 h-9 flex text-center justify-center pt-2"> <a href="./sign-up.php">Sign Up</a></></button>   
             </form>

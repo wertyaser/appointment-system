@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        header('Location: my-account.php');
+        echo '<script>updateAlert();</script>';
     } else {
         die(mysqli_error($conn));
     }
@@ -138,22 +138,22 @@ if (isset($_POST['submit'])) {
             name="password"
             value="<?php echo $password ?>"
             required
-            class="border-4 border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50"
+            class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50"
           />
           <div class="flex gap-2">
             <button
               type="button"
-              style="background-color: #C5D3CD;"
+              
               onClick="handleClearFields()"
-              class="px-6 py-4 rounded-md border border-black hover:bg-white/[.5] transition-all text-black"
+              class="px-6 py-4 rounded-md border hover:bg-red-300/[.6] transition-all text-black bg-white bg-opacity-50 z-10"
             >
               Clear
             </button>
             <button
               type="submit"
               name="submit"
-              onclick="updateAlert()"
-              class="text-black rounded-md px-6 py-4 border border-white w-full  bg-white bg-opacity-50"
+              onclick = "updateAlert()"
+              class="text-black rounded-md px-6 py-4 border hover:bg-secondary/[.6] transition-all w-full  bg-white bg-opacity-50 z-10"
             >
               Update
             </button>
