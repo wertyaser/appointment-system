@@ -11,6 +11,7 @@ $birthday = $row['birthday'];
 $course = $row['course'];
 $email = $row['email'];
 $password = $row['password'];
+$grade = $row['grade'];
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
@@ -18,8 +19,9 @@ if (isset($_POST['submit'])) {
     $course = $_POST['course'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $grade = $_POST['grade'];
 
-    $sql = "UPDATE users set student_id='$id', name='$name', birthday ='$birthday', course='$course', email='$email', password='$password' WHERE student_id = '$id'";
+    $sql = "UPDATE users set student_id='$id', name='$name', birthday ='$birthday', course='$course', email='$email', password='$password', grade='$grade' WHERE student_id = '$id'";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -101,8 +103,16 @@ if (isset($_POST['submit'])) {
                         <input type="date" id="birthday" name="birthday" value="<?php echo $birthday ?>" class="border border-black rounded-md text-black mb-3 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
                     </div>
                 </div>
-                <span>Course</span>
-                <input type="text" id="course" name="course" value="<?php echo $course ?>" class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
+                <div class="flex items-center gap-2">
+                    <div class="w-full">
+                        <span>Course</span>
+                        <input type="text" id="course" name="course" value="<?php echo $course ?>" class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
+                    </div>
+                    <div class="w-full">
+                        <span >Grade</span>
+                        <input type="number" id="grade" name="grade" value="<?php echo $grade ?>" class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
+                    </div>
+                </div>
                 <span>Email</span>
                 <input type="email" id="email" name="email" value="<?php echo $email ?>" required class="border border-black rounded-md text-black mb-3 min-w-0 px-6 py-4 block w-full justify-center bg-white bg-opacity-50" />
                 <span>Password</span>
