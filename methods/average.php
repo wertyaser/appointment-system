@@ -49,11 +49,6 @@ check_login($conn);
                         </div>
                     </div>
 
-                    <form method="post" class="relative hidden md:block">
-                        
-                        </button>
-                    </form>
-
                     <a href="../add-user.php">
                         <img src="../images/add-user.png" alt="Logout" class="h-6 w-6 text-black" />
                     </a>

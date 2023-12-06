@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <form method="post" class="m-auto">
                         <div class="flex justify-end">
                             <button type="button" class="text-black flex justify-end rounded-md px-4 py-2 border hover:bg-neutral-400/[.6] transition-all bg-white bg-opacity-50 z-10">
-                                Cancel
+                                <a href="admin.php">Cancel</a>
                             </button>
                         </div>
                         <h1 class="mb-2 font-bold text-2xl text-left">Add New User</h1>

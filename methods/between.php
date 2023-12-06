@@ -49,9 +49,6 @@ check_login($conn);
                         </div>
                     </div>
 
-                    
-                    </form>
-
                     <a href="../add-user.php">
                         <img src="../images/add-user.png" alt="Logout" class="h-6 w-6 text-black" />
                     </a>
@@ -64,7 +61,7 @@ check_login($conn);
         </nav>
 
         <div class="mx-auto max-w-5xl w-11/12 py-8 z-10 relative mt-10">
-                <h1 class="font-bold text-6xl text-left mb-3">Admin Dashboard</h1>
+                <h1 class="font-bold text-6xl text-left mb-3 z-10">Admin Dashboard</h1>
                 <h1 class="font-normal text-3xl text-left mb-3">Students Registered This Month</h1>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white border-b-4 border-solid border-accent" data-aos="flip-up">
                     <table class="w-full text-sm text-left ">
