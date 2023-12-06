@@ -1,5 +1,5 @@
 function updateAlert() {
-  alert("Updated Successfully");
+  alert("Information updated successfully.");
 }
 
 function createUserAlert() {
@@ -23,4 +23,9 @@ function handleClearFields() {
 
 function registerAlert() {
   alert("Successfully registered!");
+}
+
+function toggleDropDown() {
+  var dropDownItems = document.getElementById("dropDownItems");
+  dropDownItems.classList.toggle("hidden");
 }
