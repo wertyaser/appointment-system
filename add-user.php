@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = $_POST['password'];
     $bday = $_POST['bday'];
     $course = $_POST['course'];
+    $grade = $_POST['grade'];
 
     if (!empty($fullname) && !empty($password) && !empty($email) && !empty($bday) && !empty($course)) {
         $query = "select * from users where email = '$email' limit 1";
@@ -19,9 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result->num_rows > 0) {
             echo "Email already exists. Please use a different email.";
         } else {
-            $query = "insert into users (name, birthday, course, email, password) 
-            values ('$fullname', '$bday', '$course', '$email', '$password');";
+            $query = "insert into users (grade, name, birthday, course, email, password) 
+            values ('$grade', '$fullname', '$bday', '$course', '$email', '$password');";
             
+            // NEED AYUSIN "Field 'student_id' doesn't have a default value in"
             $result = mysqli_query($conn, $query);
             if ($result) {
                 header("Location: admin.php");
@@ -68,11 +70,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <input type="text" name="fname" placeholder="First name" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
                         <input type="text" name="lname" placeholder="Last name" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
                         <input type="text" name="email" placeholder="Email" required class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
-                        <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        <div class="flex items-center gap-1">
+                            <input type="text" name="course" placeholder="Course" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                            <input type="number" name="grade" placeholder="Grade" required autocapitalize="on" class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
+                        </div>
                         <input type="password" name="password" placeholder="Password" required class="border border-neutral-300 rounded-md text-black mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50">
                         <div class="w-full">
                             <span class="text-xs">Birthday</span>
-                            <input type="date" id="birthday" name="birthday" value="<?php echo $birthday ?>" class="border border-neutral-300 rounded-md text-neutral-700 mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50"/>
+                            <input type="date" id="bday" name="bday" value="<?php echo $bday ?>" class="border border-neutral-300 rounded-md text-neutral-700 mb-2 px-4 py-2 block w-full justify-center bg-white bg-opacity-50"/>
                         </div>
                         <div class="flex gap-2">
                             <button type="button" onClick="handleClearFields()" class="px-4 py-2 rounded-md border hover:bg-red-300/[.6] transition-all text-black bg-white bg-opacity-50 z-10">
