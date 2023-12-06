@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: "#313866",
-        violet: "#504099",
-        "pink-violet": "#974EC3",
-        pink: "#FE7BE5",
+        accent: "#5A5874",
+        primary: "#CBCDBC",
+        secondary: "#C5D3CD",
+        bckgrd: "#F6F3F5",
       },
     },
     fontFamily: {
-      display: ["Poetsen One", "sans-serif"],
+      sans: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],
